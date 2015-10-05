@@ -18,16 +18,16 @@
 			<th>Quantity</th>
 		</tr>
         <tr>
-        	<td><input value="Mass Effect" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td>${order.orderList[0].title}</td>
+        	<td>${order.orderList[0].quantity}</td>
         </tr>
         <tr>
-        	<td><input value="Dragon Age" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td>${order.orderList[1].title}</td>
+        	<td>${order.orderList[1].quantity}</td>
         </tr>
         <tr>
-        	<td><input value="Saints Row" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td>${order.orderList[2].title}</td>
+        	<td>${order.orderList[2].quantity}</td>
         </tr>
     </table>
     
