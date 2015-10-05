@@ -8,7 +8,7 @@
 <title>Order Entry</title>
 </head>
 <body>
-
+<h1>Order Entry</h1>
 <form:form modelAttribute="order" method="post" action="purchase/submitItems">
     <table>
     	<tr>
@@ -16,8 +16,16 @@
 			<th>Quantity</th>
 		</tr>
         <tr>
-        	<td><input value="Mass Effect" name = "title"/></td>
-        	<td><input value="0" name="quantity"/></td>
+        	<td><input value="Mass Effect" name ="title1"/></td>
+        	<td><input value="0" name="quantity1"/></td>
+        </tr>
+        <tr>
+        	<td><input value="Dragon Age" name ="title1"/></td>
+        	<td><input value="0" name="quantity1"/></td>
+        </tr>
+        <tr>
+        	<td><input value="Saints Row" name ="title1"/></td>
+        	<td><input value="0" name="quantity1"/></td>
         </tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit Order"/></td>

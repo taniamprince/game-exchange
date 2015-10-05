@@ -1,40 +1,49 @@
 package edu.osu.cse5234.model;
 
 public class ShippingInfo implements java.io.Serializable {
-	private String ccNum;
-	private String expDate;
-	private String ccvCode;
-	private String name;
+	private String address1;
+	private String address2;
+	private String city;
+	private String state;
+	private String zip;
 	
-	public void setCCNum(String ccNum){
-		this.ccNum = ccNum;
+	public void setAddress1(String address){
+		this.address1 = address;
 	}
 	
-	public String getCCNum(){
-		return ccNum;
+	public String getAddress1(){
+		return address1;
 	}
 	
-	public void setExpDate(String expDate){
-		this.expDate = expDate;
+	public void setAddress2(String address){
+		this.address2 = address;
 	}
 	
-	public String getExpDate(){
-		return expDate;
+	public String getAddress2(){
+		return address2;
 	}
 	
-	public void setCCVCode(String ccvCode){
-		this.ccvCode = ccvCode;
+	public void setCity(String city){
+		this.city = city;
 	}
 	
-	public String getCCVCode(){
-		return ccvCode;
+	public String getCity(){
+		return city;
 	}
 	
-	public void setName(String name){
-		this.name = name;
+	public void setState(String state){
+		this.state = state;
 	}
 	
-	public String getName(){
-		return name;
+	public String getState(){
+		return state;
+	}
+	
+	public void setZip(String zip){
+		this.zip = zip;
+	}
+	
+	public String getZip(){
+		return zip;
 	}
 }

@@ -1,21 +1,31 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title>Payment</title>
 </head>
 <body>
-
-<jsp:useBean id="data" class="edu.osu.cse5234.model.Item" scope="session"/>
-<jsp:setProperty name="data" property="*"/>
-
-<form:form modelAttribute="order" method="post" action="purchase/submitItems">
+<h1>Payment</h1>
+<form:form modelAttribute="order" method="post" action="submitPayment">
     <table>
     	<tr>
-    		<td><jsp:getProperty name="data" property="title"/></td>
-    		<td></td>
+    		<td>Name: </td>
+    		<td><input name="name"/></td>
+    	</tr>
+    	<tr>
+    		<td>CC Number: </td>
+    		<td><input name="ccNum"/></td>
+    	</tr>
+    	<tr>
+    		<td>Exp: </td>
+    		<td><input name="exp"/></td>
+    	</tr>
+    	<tr>
+    		<td>CCV: </td>
+    		<td><input name="ccv"/></td>
     	</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit"/></td>
