@@ -29,9 +29,7 @@ public class Purchase {
 
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		//request.getSession().setAttribute("order", order);
-		HttpSession session = request.getSession();
-        Item item  = (Item)session.getAttribute("data");
+		request.getSession().setAttribute("order", order);
 		return "redirect:/purchase/paymentEntry";
 	}
 	
