@@ -4,8 +4,6 @@ public class Item implements java.io.Serializable {
 	private String title;
 	private String quantity;
 	
-	public Item() {
-    }
  
     public Item(String title, String quantity) {
         this.title = title;

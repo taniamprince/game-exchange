@@ -11,10 +11,8 @@ public class Order implements java.io.Serializable {
 		orderList = new ArrayList<Item>();
     }
 	
-	public Order(String title, String quantity){
-		Item game = new Item();
-		game.setTitle(title);
-		game.setQuantity(quantity);
+	public void addItem(String title, String quantity){
+		Item game = new Item(title,quantity);
 		orderList.add(game);
 	}
 	
