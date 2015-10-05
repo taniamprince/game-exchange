@@ -5,10 +5,13 @@ import java.util.List;
 
 public class Order implements java.io.Serializable {
 	
-	private List<Item> orderList;
+	public List<Item> orderList;
 
 	public Order() {
 		orderList = new ArrayList<Item>();
+		addItem("Mass Effect", "0");
+		addItem("Dragon Age", "0");
+		addItem("Saints Row", "0");
     }
 	
 	public void addItem(String title, String quantity){

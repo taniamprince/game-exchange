@@ -16,16 +16,16 @@
 			<th>Quantity</th>
 		</tr>
         <tr>
-        	<td><input value="Mass Effect" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td>${order.orderList[0].title}</td>
+        	<td><form:input path="orderList[0].quantity" /></td>
         </tr>
         <tr>
-        	<td><input value="Dragon Age" name ="title2"/></td>
-        	<td><input value="0" name="quantity2"/></td>
+        	<td>${order.orderList[1].title}</td>
+        	<td><form:input path="orderList[1].quantity" /></td>
         </tr>
         <tr>
-        	<td><input value="Saints Row" name ="title3"/></td>
-        	<td><input value="0" name="quantity3"/></td>
+        	<td>${order.orderList[2].title}</td>
+        	<td><form:input path="orderList[2].quantity" /></td>
         </tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit Order"/></td>
