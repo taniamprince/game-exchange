@@ -20,12 +20,12 @@
         	<td><input value="0" name="quantity1"/></td>
         </tr>
         <tr>
-        	<td><input value="Dragon Age" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td><input value="Dragon Age" name ="title2"/></td>
+        	<td><input value="0" name="quantity2"/></td>
         </tr>
         <tr>
-        	<td><input value="Saints Row" name ="title1"/></td>
-        	<td><input value="0" name="quantity1"/></td>
+        	<td><input value="Saints Row" name ="title3"/></td>
+        	<td><input value="0" name="quantity3"/></td>
         </tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit Order"/></td>
