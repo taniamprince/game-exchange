@@ -8,7 +8,6 @@ public class ShippingInfo implements java.io.Serializable {
 	private String zip;
 	
 	public ShippingInfo(){
-		
 	}
 	
 	public void setAddress1(String address){

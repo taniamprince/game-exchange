@@ -6,6 +6,13 @@ public class PaymentInfo implements java.io.Serializable {
 	private String ccvCode;
 	private String name;
 	
+	public PaymentInfo(){
+		ccNum = "";
+		expDate = "";
+		ccvCode = "";
+		name = "";
+	}
+	
 	public void setCCNum(String ccNum){
 		this.ccNum = ccNum;
 	}
