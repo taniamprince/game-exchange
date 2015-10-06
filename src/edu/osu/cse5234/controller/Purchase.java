@@ -16,6 +16,7 @@ import org.springframework.web.servlet.ModelAndView;
 import edu.osu.cse5234.model.Item;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
+import edu.osu.cse5234.model.ShippingInfo;
 
 @Controller
 @RequestMapping("/purchase")
@@ -35,26 +36,25 @@ public class Purchase {
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
 	public String viewPaymentEntryPage(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("order", new Order());
-		//request.setAttribute("payment", new PaymentInfo());	
+		request.setAttribute("payment", new PaymentInfo());	
 		return "PaymentEntryForm";
 	}
 	
 	@RequestMapping(path = "/submitPayment", method = RequestMethod.POST)
-	public String submitPayment(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		//request.getSession().setAttribute("order", order);
+	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, HttpServletRequest request) {
+		request.getSession().setAttribute("payment", payment);
 		return "redirect:shippingEntry";
 	}
 	
 	@RequestMapping(path = "/shippingEntry", method = RequestMethod.GET)
 	public String viewShippingEntryPage(HttpServletRequest request, HttpServletResponse response) {
-		//request.setAttribute("shipping", new PaymentInfo());	
+		request.setAttribute("shipping", new ShippingInfo());	
 		return "ShippingEntryForm";
 	}
 
 	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
-	public String submitShipping(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		//request.getSession().setAttribute("order", order);
+	public String submitShipping(@ModelAttribute("shipping") ShippingInfo shipping, HttpServletRequest request) {
+		request.getSession().setAttribute("shipping", shipping);
 		return "redirect:viewOrder";
 	}
 	
