@@ -9,23 +9,24 @@
 </head>
 <body>
 <h1>Payment</h1>
-<form:form modelAttribute="order" method="post" action="submitPayment">
+<form:form modelAttribute="payment" method="post" action="submitPayment">
     <table>
     	<tr>
+        	
     		<td>Name: </td>
-    		<td><input name="name"/></td>
+    		<td><form:input path="name" /></td>
     	</tr>
     	<tr>
     		<td>CC Number: </td>
-    		<td><input name="ccNum"/></td>
+    		<td><form:input path="CCNum"/></td>
     	</tr>
     	<tr>
     		<td>Exp: </td>
-    		<td><input name="exp"/></td>
+    		<td><form:input path="expDate"/></td>
     	</tr>
     	<tr>
     		<td>CCV: </td>
-    		<td><input name="ccv"/></td>
+    		<td><form:input path="CCVCode"/></td>
     	</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit"/></td>

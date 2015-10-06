@@ -9,27 +9,27 @@
 </head>
 <body>
 <h1>Shipping</h1>
-<form:form modelAttribute="order" method="post" action="submitShipping">
+<form:form modelAttribute="shipping" method="post" action="submitShipping">
     <table>
     	<tr>
     		<td>Addr: </td>
-    		<td><input name="addr1"/></td>
+    		<td><form:input path="address1"/></td>
     	</tr>
     	<tr>
     		<td>Addr: </td>
-    		<td><input name="addr2"/></td>
+    		<td><form:input path="address2"/></td>
     	</tr>
     	<tr>
     		<td>City: </td>
-    		<td><input name="city"/></td>
+    		<td><form:input path="city"/></td>
     	</tr>
     	<tr>
     		<td>State: </td>
-    		<td><input name="state"/></td>
+    		<td><form:input path="state"/></td>
     	</tr>
     	<tr>
     		<td>Zip: </td>
-    		<td><input name="zip"/></td>
+    		<td><form:input path="zip"/></td>
     	</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit"/></td>

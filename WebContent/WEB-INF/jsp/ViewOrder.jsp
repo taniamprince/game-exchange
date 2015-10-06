@@ -18,16 +18,17 @@
 			<th>Quantity</th>
 		</tr>
         <tr>
-        	<td>${order.orderList[0].title}</td>
-        	<td>${order.orderList[0].quantity}</td>
+        
+        	<td>${sessionScope.order.orderList[0].title}</td>
+        	<td>${sessionScope.order.orderList[0].quantity}</td>
         </tr>
         <tr>
-        	<td>${order.orderList[1].title}</td>
-        	<td>${order.orderList[1].quantity}</td>
+        	<td>${sessionScope.order.orderList[1].title}</td>
+        	<td>${sessionScope.order.orderList[1].quantity}</td>
         </tr>
         <tr>
-        	<td>${order.orderList[2].title}</td>
-        	<td>${order.orderList[2].quantity}</td>
+        	<td>${sessionScope.order.orderList[2].title}</td>
+        	<td>${sessionScope.order.orderList[2].quantity}</td>
         </tr>
     </table>
     
@@ -35,19 +36,19 @@
     <table>
     	<tr>
     		<td>Name: </td>
-    		<td><input name="name"/></td>
+    		<td>${sessionScope.payment.name}</td>
     	</tr>
     	<tr>
     		<td>CC Number: </td>
-    		<td><input name="ccNum"/></td>
+    		<td>${sessionScope.payment.CCNum}</td>
     	</tr>
     	<tr>
     		<td>Exp: </td>
-    		<td><input name="exp"/></td>
+    		<td>${sessionScope.payment.expDate}</td>
     	</tr>
     	<tr>
     		<td>CCV: </td>
-    		<td><input name="ccv"/></td>
+    		<td>${sessionScope.payment.CCVCode}</td>
     	</tr>
     </table>
     
@@ -55,23 +56,24 @@
     <table>
     	<tr>
     		<td>Addr: </td>
-    		<td><input name="addr1"/></td>
+    		<td>${sessionScope.shipping.address1}</td>
     	</tr>
     	<tr>
     		<td>Addr: </td>
-    		<td><input name="addr2"/></td>
+    		<td>${sessionScope.shipping.address2}</td>
     	</tr>
     	<tr>
     		<td>City: </td>
-    		<td><input name="city"/></td>
+    		<td>${sessionScope.shipping.city}</td>
     	</tr>
     	<tr>
     		<td>State: </td>
-    		<td><input name="state"/></td>
+    		<td>${sessionScope.shipping.state}</td>
     	</tr>
     	<tr>
     		<td>Zip: </td>
-    		<td><input name="zip"/></td>
+    		<td>${sessionScope.shipping.zip}</td>
+    		
     	</tr>
 		<tr>
 			<td colspan="2"><input type="submit" value="Submit Order"/></td>
