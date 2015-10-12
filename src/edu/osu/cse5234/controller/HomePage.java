@@ -21,6 +21,10 @@ import edu.osu.cse5234.model.ShippingInfo;
 @Controller
 @RequestMapping("/")
 public class HomePage {
-
+	@RequestMapping(method = RequestMethod.GET)
+	public String viewHomePage(HttpServletRequest request, HttpServletResponse response) throws Exception {
+		
+		return "Home.jsp";
+	}
 
 }

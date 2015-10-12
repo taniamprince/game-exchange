@@ -8,5 +8,10 @@
 </head>
 <body>
 
+<a href="../">Home!</a>
+<a href="../aboutUs">About Us</a>
+<a href="../contactUs">Contact Us</a>
+<a href="../purchase">View Cart</a>
+
 </body>
 </html>
