@@ -5,34 +5,39 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="screen" />
 <title>Payment</title>
 </head>
 <body>
-<h1>Payment</h1>
-<form:form modelAttribute="payment" method="post" action="submitPayment">
-    <table>
-    	<tr>
-        	
-    		<td>Name: </td>
-    		<td><form:input path="name" /></td>
-    	</tr>
-    	<tr>
-    		<td>CC Number: </td>
-    		<td><form:input path="CCNum"/></td>
-    	</tr>
-    	<tr>
-    		<td>Exp: </td>
-    		<td><form:input path="expDate"/></td>
-    	</tr>
-    	<tr>
-    		<td>CCV: </td>
-    		<td><form:input path="CCVCode"/></td>
-    	</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="Submit"/></td>
-		</tr>
-    </table>
-</form:form>
-
+<div class="container">
+	<jsp:include page="Header.jsp"></jsp:include>
+	<div class="row">
+		<h2>Payment</h2>
+		<hr>
+		<form:form modelAttribute="payment" method="post" action="submitPayment">
+	    <table>
+	    	<tr>
+	        	
+	    		<td>Name: </td>
+	    		<td><form:input path="name" /></td>
+	    	</tr>
+	    	<tr>
+	    		<td>CC Number: </td>
+	    		<td><form:input path="CCNum"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Exp: </td>
+	    		<td><form:input path="expDate"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>CCV: </td>
+	    		<td><form:input path="CCVCode"/></td>
+	    	</tr>
+	    </table>
+	    <input class="button" type="submit" value="Next"/>
+		</form:form>
+	</div>
+	<jsp:include page="Footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

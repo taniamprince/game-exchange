@@ -5,81 +5,86 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="screen" />
 <title>Shipping</title>
 </head>
 <body>
-<h1>View Order</h1>
-<form:form modelAttribute="order" method="post" action="confirmation">
-
-	<h2>Items</h2>
-	<table>
-    	<tr>
-			<th>Title</th>
-			<th>Quantity</th>
-		</tr>
-        <tr>
-        
-        	<td>${sessionScope.order.orderList[0].title}</td>
-        	<td>${sessionScope.order.orderList[0].quantity}</td>
-        </tr>
-        <tr>
-        	<td>${sessionScope.order.orderList[1].title}</td>
-        	<td>${sessionScope.order.orderList[1].quantity}</td>
-        </tr>
-        <tr>
-        	<td>${sessionScope.order.orderList[2].title}</td>
-        	<td>${sessionScope.order.orderList[2].quantity}</td>
-        </tr>
-    </table>
-    
-    <h2>Payment Info</h2>
-    <table>
-    	<tr>
-    		<td>Name: </td>
-    		<td>${sessionScope.payment.name}</td>
-    	</tr>
-    	<tr>
-    		<td>CC Number: </td>
-    		<td>${sessionScope.payment.CCNum}</td>
-    	</tr>
-    	<tr>
-    		<td>Exp: </td>
-    		<td>${sessionScope.payment.expDate}</td>
-    	</tr>
-    	<tr>
-    		<td>CCV: </td>
-    		<td>${sessionScope.payment.CCVCode}</td>
-    	</tr>
-    </table>
-    
-    <h2>Shipping Info</h2>
-    <table>
-    	<tr>
-    		<td>Addr: </td>
-    		<td>${sessionScope.shipping.address1}</td>
-    	</tr>
-    	<tr>
-    		<td>Addr: </td>
-    		<td>${sessionScope.shipping.address2}</td>
-    	</tr>
-    	<tr>
-    		<td>City: </td>
-    		<td>${sessionScope.shipping.city}</td>
-    	</tr>
-    	<tr>
-    		<td>State: </td>
-    		<td>${sessionScope.shipping.state}</td>
-    	</tr>
-    	<tr>
-    		<td>Zip: </td>
-    		<td>${sessionScope.shipping.zip}</td>
-    		
-    	</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="Submit Order"/></td>
-		</tr>
-    </table>
-</form:form>
-
+<div class="container">
+	<jsp:include page="Header.jsp"></jsp:include>
+	<div class="row">
+		<form:form modelAttribute="order" method="post" action="confirmation">
+		<h2>Items</h2>
+		<hr>
+		<table>
+	    	<tr>
+				<th>Title</th>
+				<th>Quantity</th>
+			</tr>
+	        <tr>
+	        
+	        	<td>${sessionScope.order.orderList[0].title}</td>
+	        	<td>${sessionScope.order.orderList[0].quantity}</td>
+	        </tr>
+	        <tr>
+	        	<td>${sessionScope.order.orderList[1].title}</td>
+	        	<td>${sessionScope.order.orderList[1].quantity}</td>
+	        </tr>
+	        <tr>
+	        	<td>${sessionScope.order.orderList[2].title}</td>
+	        	<td>${sessionScope.order.orderList[2].quantity}</td>
+	        </tr>
+	    </table>
+	    
+	    <h2>Payment Info</h2>
+	    <hr>
+	    <table>
+	    	<tr>
+	    		<td>Name: </td>
+	    		<td>${sessionScope.payment.name}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>CC Number: </td>
+	    		<td>${sessionScope.payment.CCNum}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Exp: </td>
+	    		<td>${sessionScope.payment.expDate}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>CCV: </td>
+	    		<td>${sessionScope.payment.CCVCode}</td>
+	    	</tr>
+	    </table>
+	    
+	    <h2>Shipping Info</h2>
+	    <hr>
+	    <table>
+	    	<tr>
+	    		<td>Addr: </td>
+	    		<td>${sessionScope.shipping.address1}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Addr: </td>
+	    		<td>${sessionScope.shipping.address2}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>City: </td>
+	    		<td>${sessionScope.shipping.city}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>State: </td>
+	    		<td>${sessionScope.shipping.state}</td>
+	    	</tr>
+	    	<tr>
+	    		<td>Zip: </td>
+	    		<td>${sessionScope.shipping.zip}</td>
+	    		
+	    	</tr>
+	    </table>
+	    <input class="button" type="submit" value="Next"/>
+	</form:form>
+	</div>
+	<jsp:include page="Footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

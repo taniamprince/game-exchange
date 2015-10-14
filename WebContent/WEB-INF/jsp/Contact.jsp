@@ -5,24 +5,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="css/mystyle.css" type="text/css" media="screen" />
-<title>Game Exchange</title>
+<title>Contact Us</title>
 </head>
 <body>
 <div class="container">
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
-		<div class="col-6">
-		  <h2>Vision &amp; Mission</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
-	    </div>
-		<div class="col-6">
-			<h2>Business Strategy</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<h2>Products &amp; Services</h2>
+		<h2>Contact Us</h2>
 		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>

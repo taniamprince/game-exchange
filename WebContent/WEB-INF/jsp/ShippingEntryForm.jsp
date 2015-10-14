@@ -5,37 +5,42 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="screen" />
 <title>Shipping</title>
 </head>
 <body>
-<h1>Shipping</h1>
-<form:form modelAttribute="shipping" method="post" action="submitShipping">
-    <table>
-    	<tr>
-    		<td>Addr: </td>
-    		<td><form:input path="address1"/></td>
-    	</tr>
-    	<tr>
-    		<td>Addr: </td>
-    		<td><form:input path="address2"/></td>
-    	</tr>
-    	<tr>
-    		<td>City: </td>
-    		<td><form:input path="city"/></td>
-    	</tr>
-    	<tr>
-    		<td>State: </td>
-    		<td><form:input path="state"/></td>
-    	</tr>
-    	<tr>
-    		<td>Zip: </td>
-    		<td><form:input path="zip"/></td>
-    	</tr>
-		<tr>
-			<td colspan="2"><input type="submit" value="Submit"/></td>
-		</tr>
-    </table>
-</form:form>
-
+<div class="container">
+	<jsp:include page="Header.jsp"></jsp:include>
+	<div class="row">
+		<h2>Payment</h2>
+		<hr>
+		<form:form modelAttribute="shipping" method="post" action="submitShipping">
+	    <table>
+	    	<tr>
+	    		<td>Addr: </td>
+	    		<td><form:input path="address1"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Addr: </td>
+	    		<td><form:input path="address2"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>City: </td>
+	    		<td><form:input path="city"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>State: </td>
+	    		<td><form:input path="state"/></td>
+	    	</tr>
+	    	<tr>
+	    		<td>Zip: </td>
+	    		<td><form:input path="zip"/></td>
+	    	</tr>
+	    </table>
+	    <input class="button" type="submit" value="Next"/>
+	</form:form>
+	</div>
+	<jsp:include page="Footer.jsp"></jsp:include>
+</div>
 </body>
 </html>
