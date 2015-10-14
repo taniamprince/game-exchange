@@ -11,6 +11,26 @@
 <div class="container">
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
+		<h2>Products &amp; Services</h2>
+		<div class="col-3">
+		  <p><img src="/GameExchange/images/mass-effect.jpg"></p>
+		  <h3>Mass Effect</h3>
+		</div>
+		<div class="col-3">
+		  <p><img src="/GameExchange/images/dragon-age.jpg"></p>
+		  <h3>Dragon Age</h3>
+		</div>
+		<div class="col-3">
+		  <p><img src="/GameExchange/images/saints-row.jpg"></p>
+		  <h3>Saints Row</h3>
+		  </div>
+		<div class="col-3">
+		  <p><img src="/GameExchange/images/halo-3.jpg"></p>
+		  <h3>Halo 3</h3>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
 		<div class="col-6">
 		  <h2>Vision &amp; Mission</h2>
 		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
@@ -19,11 +39,6 @@
 			<h2>Business Strategy</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
 		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<h2>Products &amp; Services</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
 </div>
