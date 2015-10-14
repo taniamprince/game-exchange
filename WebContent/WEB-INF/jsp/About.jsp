@@ -13,7 +13,8 @@
 	<div class="row">
 		<div class="col-4">
 		  <h2>Tania Prince</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+		  <h3>CEO</h3>
+		  <p>From Columbus, Ohio. Graduated from The Ohio State University with a degree in computer science and engineering. Founded the company soon after graduation due to her love of video games.</p>
 	    </div>
 		<div class="col-4">
 			<h2>Gregory Rogers</h2>
