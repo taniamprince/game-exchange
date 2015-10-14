@@ -14,7 +14,7 @@
 	<div class="row">
 		<h2>Games</h2>
 		<hr>
-		<form:form modelAttribute="order" method="post" action="submitItems">
+		<form:form modelAttribute="order" method="post" action="purchase/submitItems">
 	    <table>
 	    	<tr>
 				<th>Title</th>

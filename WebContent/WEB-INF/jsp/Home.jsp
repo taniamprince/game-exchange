@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<link rel="stylesheet" href="css/mystyle.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="/GameExchange/css/mystyle.css" type="text/css" media="screen" />
 <title>Game Exchange</title>
 </head>
 <body>

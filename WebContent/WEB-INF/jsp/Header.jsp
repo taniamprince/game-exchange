@@ -1,11 +1,11 @@
 <header>
-	<a class="logo" href="">Game Exchange</a>
+	<a class="logo" href="/GameExchange">Game Exchange</a>
 	<nav class="float-right">
 		<ul>
-		    <li><a href="/">Home</a></li>
-		    <li><a href="about">About Us</a></li>
-		    <li><a href="contact">Contact Us</a></li>
-		    <li><a href="purchase">View Cart</a></li>
+		    <li><a href="/GameExchange">Home</a></li>
+		    <li><a href="/GameExchange/about">About Us</a></li>
+		    <li><a href="/GameExchange/contact">Contact Us</a></li>
+		    <li><a href="/GameExchange/purchase">View Cart</a></li>
 	  	</ul>
 	</nav>
 </header>
