@@ -6,7 +6,7 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <link rel="stylesheet" href="../css/mystyle.css" type="text/css" media="screen" />
-<title>Shipping</title>
+<title>View Order</title>
 </head>
 <body>
 <div class="container">
@@ -17,7 +17,7 @@
 		<hr>
 		<table>
 	    	<tr>
-				<th>Title</th>
+				<th class="left-col">Title</th>
 				<th>Quantity</th>
 			</tr>
 	        <tr>
@@ -39,7 +39,7 @@
 	    <hr>
 	    <table>
 	    	<tr>
-	    		<td>Name: </td>
+	    		<td class="left-col">Name: </td>
 	    		<td>${sessionScope.payment.name}</td>
 	    	</tr>
 	    	<tr>
@@ -60,11 +60,11 @@
 	    <hr>
 	    <table>
 	    	<tr>
-	    		<td>Addr: </td>
+	    		<td class="left-col">Address 1: </td>
 	    		<td>${sessionScope.shipping.address1}</td>
 	    	</tr>
 	    	<tr>
-	    		<td>Addr: </td>
+	    		<td>Address 2: </td>
 	    		<td>${sessionScope.shipping.address2}</td>
 	    	</tr>
 	    	<tr>
@@ -81,7 +81,7 @@
 	    		
 	    	</tr>
 	    </table>
-	    <input class="button" type="submit" value="Next"/>
+	    <input class="button" type="submit" value="Submit Order"/>
 	</form:form>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>

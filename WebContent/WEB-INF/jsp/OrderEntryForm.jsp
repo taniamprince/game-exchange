@@ -17,7 +17,7 @@
 		<form:form modelAttribute="order" method="post" action="purchase/submitItems">
 	    <table>
 	    	<tr>
-				<th>Title</th>
+				<th class="left-col">Title</th>
 				<th>Quantity</th>
 			</tr>
 	        <tr>

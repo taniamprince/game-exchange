@@ -12,16 +12,16 @@
 <div class="container">
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
-		<h2>Payment</h2>
+		<h2>Shipping</h2>
 		<hr>
 		<form:form modelAttribute="shipping" method="post" action="submitShipping">
 	    <table>
 	    	<tr>
-	    		<td>Addr: </td>
+	    		<td class="left-col">Address 1: </td>
 	    		<td><form:input path="address1"/></td>
 	    	</tr>
 	    	<tr>
-	    		<td>Addr: </td>
+	    		<td>Address 2: </td>
 	    		<td><form:input path="address2"/></td>
 	    	</tr>
 	    	<tr>

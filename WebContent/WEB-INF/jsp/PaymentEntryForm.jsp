@@ -18,7 +18,7 @@
 	    <table>
 	    	<tr>
 	        	
-	    		<td>Name: </td>
+	    		<td class="left-col">Name: </td>
 	    		<td><form:input path="name" /></td>
 	    	</tr>
 	    	<tr>
