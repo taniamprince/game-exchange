@@ -33,11 +33,11 @@
 	<div class="row">
 		<div class="col-6">
 		  <h2>Vision &amp; Mission</h2>
-		  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+		  <p>Game Exchange buys and sells second hand games at great prices. Whether you are looking for a rare limited edition or just want to exchange your collection for something new, Game Exchange has the game for you.</p>
 	    </div>
 		<div class="col-6">
 			<h2>Business Strategy</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+			<p>Game Exchange aspires to offer the most extensive collection of used video games. Our goal is to provide great quality service and games to our customers while keeping prices low.</p>
 		</div>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
