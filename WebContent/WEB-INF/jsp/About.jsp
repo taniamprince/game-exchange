@@ -17,11 +17,13 @@
 	    </div>
 		<div class="col-4">
 			<h2>Gregory Rogers</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+			<h3>Senior Software Engineer</h3>
+			<p>From Columbus, Ohio. Graduated from The Ohio State University with a degree in computer science and engineering.</p>
 		</div>
 		<div class="col-4">
 			<h2>Zachary Weil</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+			<h3>Senior Software Architect</h3>
+			<p>From Redding, California. Graduated from the Ohio State University with a degree in computer science and engineering. </p>
 		</div>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
