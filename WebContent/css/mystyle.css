@@ -1,0 +1,22 @@
+@CHARSET "ISO-8859-1";
+
+body {
+background: #333333;
+text-align: center;
+line-height: 1.5;
+font-family: sans-serif;
+}
+
+#container {
+width: 80%;
+margin: 0 auto;   
+}
+
+#logo, #logo a {
+color: #252122;
+margin: 50px 0px 25px;
+font-weight: 700;
+text-decoration: none;
+font-size: 34px;
+text-shadow: 0 1px 0 #a5a4a4;
+}

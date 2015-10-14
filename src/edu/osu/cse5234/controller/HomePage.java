@@ -24,7 +24,7 @@ public class HomePage {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewHomePage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
-		return "Home.jsp";
+		return "Home";
 	}
 
 }
