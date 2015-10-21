@@ -3,6 +3,8 @@ package edu.osu.cse5234.business;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
 
+import edu.osu.cse5234.model.Order;
+
 /**
  * Session Bean implementation class OrderProcessingServiceBean
  */
@@ -15,6 +17,10 @@ public class OrderProcessingServiceBean {
      */
     public OrderProcessingServiceBean() {
         // TODO Auto-generated constructor stub
+    }
+    
+    public String processOrder(Order order) {
+    	return "";
     }
 
 }
