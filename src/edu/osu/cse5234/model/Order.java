@@ -9,9 +9,10 @@ public class Order implements java.io.Serializable {
 
 	public Order() {
 		orderList = new ArrayList<Item>();
-		addItem("Mass Effect", "0");
-		addItem("Dragon Age", "0");
-		addItem("Saints Row", "0");
+
+		addItem("Mass Effect", "10");
+		addItem("Dragon Age", "10");
+		addItem("Saints Row", "10");
     }
 	
 	public void addItem(String title, String quantity){
@@ -26,4 +27,6 @@ public class Order implements java.io.Serializable {
 	public List<Item> getOrderList(){
 		return orderList;
 	}
+	
+	
 }

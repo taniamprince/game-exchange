@@ -1,19 +1,14 @@
 package edu.osu.cse5234.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.ModelAndView;
 
-import edu.osu.cse5234.model.Item;
+import edu.osu.cse5234.model.Inventory;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
 import edu.osu.cse5234.model.ShippingInfo;
@@ -24,7 +19,15 @@ public class Purchase {
 	
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
-		request.setAttribute("order", new Order());
+		request.setAttribute("inventory", new Inventory());
+		
+		//checks for uncompleted order
+		if(request.getAttribute("order") != null){
+			request.setAttribute("order", request.getSession().getAttribute("order"));
+		}else{
+			request.setAttribute("order", new Order());	
+		}
+		
 		return "OrderEntryForm";
 	}
 
