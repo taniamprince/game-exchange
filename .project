@@ -3,6 +3,7 @@
 	<name>GameExchange</name>
 	<comment></comment>
 	<projects>
+		<project>game-exchange-EJBClient</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

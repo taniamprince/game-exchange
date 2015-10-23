@@ -3,6 +3,8 @@ package edu.osu.cse5234.model;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import edu.osu.cse5234.business.view.Item;
+
 public class Inventory {
 
 	private ArrayList<Item> inventoryList;
