@@ -1,6 +1,10 @@
 .classpath
 *.class
 
+devtools/
+RemoteSystemsTempFiles
+
+
 --MACOSX
 .DS_Store
 .Trashes
