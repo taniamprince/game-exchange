@@ -1,10 +1,15 @@
 package edu.osu.cse5234.business.view;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-public class Inventory {
+public class Inventory implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private ArrayList<Item> inventoryList;
 	
 	

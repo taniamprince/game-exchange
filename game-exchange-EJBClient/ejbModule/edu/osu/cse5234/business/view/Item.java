@@ -1,6 +1,10 @@
 package edu.osu.cse5234.business.view;
 
 public class Item implements java.io.Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String title;
 	private String quantity;
 	
