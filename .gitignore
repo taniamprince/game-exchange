@@ -1,5 +1,7 @@
 .classpath
 *.class
+.metadata
+.recommenders
 
 devtools/
 RemoteSystemsTempFiles
