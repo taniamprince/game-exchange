@@ -4,7 +4,8 @@
 .metadata
 .recommenders
 
-*.project
+*.factorypath
+
 
 
 devtools/
