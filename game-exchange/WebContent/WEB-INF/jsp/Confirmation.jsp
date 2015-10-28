@@ -14,6 +14,8 @@
 	<h2>Order Submitted</h2>
 	<div class="row">
 		<p>Thank you for your order!</p>
+		<p>Your confirmation number is ${sessionScope.confirmation}</p>
+		
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
 </div>

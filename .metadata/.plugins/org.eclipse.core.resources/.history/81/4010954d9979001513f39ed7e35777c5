@@ -1,0 +1,12 @@
+.classpath
+
+*.class
+
+
+--MACOSX
+
+.DS_Store
+
+.Trashes
+
+.Spotlight-V100

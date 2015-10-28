@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -20,19 +21,12 @@
 				<th class="left-col">Title</th>
 				<th>Quantity</th>
 			</tr>
-	        <tr>
-	        
-	        	<td>${sessionScope.order.orderList[0].title}</td>
-	        	<td>${sessionScope.order.orderList[0].quantity}</td>
-	        </tr>
-	        <tr>
-	        	<td>${sessionScope.order.orderList[1].title}</td>
-	        	<td>${sessionScope.order.orderList[1].quantity}</td>
-	        </tr>
-	        <tr>
-	        	<td>${sessionScope.order.orderList[2].title}</td>
-	        	<td>${sessionScope.order.orderList[2].quantity}</td>
-	        </tr>
+	       <c:forEach items="${sessionScope.order.orderList}" var="list" varStatus="pStatus">
+  	<tr>      
+   		<td>${list.title}</td>
+    	<td>${list.quantity}</td> 
+ 	</tr>
+</c:forEach>
 	    </table>
 	    
 	    <h2>Payment Info</h2>

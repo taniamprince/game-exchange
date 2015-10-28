@@ -15,10 +15,6 @@ public class Inventory implements Serializable{
 	
 	public Inventory(){
 		inventoryList = new ArrayList<Item>();
-		
-		addItem("Mass Effect", "10");
-		addItem("Dragon Age", "10");
-		addItem("Saints Row", "10");
 	}
 	
 	
@@ -30,7 +26,7 @@ public class Inventory implements Serializable{
 	public ArrayList<Item> getAvailableItems(){
 		ArrayList<Item> available = new ArrayList<Item>();
 		
-		for(Iterator<Item> i = available.iterator(); i.hasNext();){
+		for(Iterator<Item> i = inventoryList.iterator(); i.hasNext();){
 			Item temp = (Item) i.next();
 			if(Integer.parseInt(temp.getQuantity())>0){
 				available.add(temp);

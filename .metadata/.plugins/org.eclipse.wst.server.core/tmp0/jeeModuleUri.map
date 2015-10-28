@@ -1,0 +1,5 @@
+#Mon Oct 26 19:44:14 EDT 2015
+game-exchange-EJBEAR/game-exchange-EJB/=game-exchange-EJB.jar
+game-exchange-EJBEAR/game-exchange-EJBClient/=lib/game-exchange-EJBClient.jar
+game-exchange/game-exchange-EJBClient/=WEB-INF/lib/game-exchange-EJBClient.jar
+game-exchange/spring-web-4.2.0.RELEASE.jar/=WEB-INF/lib/spring-web-4.2.0.RELEASE.jar

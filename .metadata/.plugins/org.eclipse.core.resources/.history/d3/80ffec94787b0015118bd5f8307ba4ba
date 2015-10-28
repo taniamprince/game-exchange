@@ -1,0 +1,5 @@
+package edu.osu.cse5324.business.view;
+
+public class Inventory {
+
+}

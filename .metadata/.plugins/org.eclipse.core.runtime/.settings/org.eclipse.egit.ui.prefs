@@ -1,0 +1,5 @@
+commit_dialog_history_messages=<?xml version\="1.0" encoding\="UTF-8"?>\r\n<messages>\r\n<message>Fixed ejb problem.&\#x0A;&\#x0A;EJBEAR and the main web application needs to be on the server, nothing&\#x0A;else does</message>\r\n<message>updated EJB</message>\r\n<message>Updatde project</message>\r\n<message>Fixed Server version</message>\r\n</messages>
+eclipse.preferences.version=1
+resourcehistory_graph_split=500,500
+resourcehistory_rev_split=700,300
+show_initial_config_dialog=false

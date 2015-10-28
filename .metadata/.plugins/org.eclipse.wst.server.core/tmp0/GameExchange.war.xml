@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<archive>
+    <archive targetInArchive="/WEB-INF/lib/game-exchange-EJBClient.jar">
+        <dir sourceOnDisk="C:\workspace\game-exchange-EJBClient\build\classes" targetInArchive="/"/>
+    </archive>
+    <dir sourceOnDisk="C:\workspace\game-exchange\WebContent" targetInArchive="/"/>
+</archive>

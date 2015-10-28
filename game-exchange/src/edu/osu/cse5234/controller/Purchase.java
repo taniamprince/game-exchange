@@ -21,18 +21,32 @@ public class Purchase {
 	@RequestMapping(method = RequestMethod.GET)
 	public String viewOrderEntryPage(HttpServletRequest request, HttpServletResponse response) throws Exception {
 		
+		if(request.getSession().getAttribute("failed")=="true"){
+			request.setAttribute("failed", true);
+		}else{
+			request.setAttribute("failed", false);
+		}
 		//checks for uncompleted order
 		
-		request.setAttribute("order", new Order(ServiceLocator.getInventoryService().getAvailableInventory()));	
-	
-		
+		request.setAttribute("order", new Order());	
+
 		return "OrderEntryForm";
 	}
 
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
 	public String submitItems(@ModelAttribute("order") Order order, HttpServletRequest request) {
+		
+		
 		request.getSession().setAttribute("order", order);
-		return "redirect:/purchase/paymentEntry";
+		if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
+			
+			request.getSession().setAttribute("failed", false);
+			return "redirect:/purchase/paymentEntry";
+		}
+		else{
+			request.getSession().setAttribute("failed", "true");
+			return "redirect:/purchase";
+		}
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
@@ -68,6 +82,7 @@ public class Purchase {
 	@RequestMapping(path = "/confirmation", method = RequestMethod.POST)
 	public String submitOrder(@ModelAttribute("order") Order order, HttpServletRequest request) {
 		//request.getSession().setAttribute("order", order);
+		request.getSession().setAttribute("confirmation", ServiceLocator.getOrderProcessingService().processOrder(order));
 		return "redirect:confirmation";
 	}
 	
