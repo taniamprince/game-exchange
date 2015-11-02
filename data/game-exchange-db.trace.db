@@ -1,0 +1,55 @@
+2015-11-02 14:30:19 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column count does not match; SQL statement:
+INSERT INTO ITEM VALUES('Mass Effect', 'Pre-owned. Xbox 360.', 19, 9.99) [21002-190]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:345)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.message.DbException.get(DbException.java:144)
+	at org.h2.command.dml.Insert.prepare(Insert.java:265)
+	at org.h2.command.Parser.prepareCommand(Parser.java:246)
+	at org.h2.engine.Session.prepareLocal(Session.java:460)
+	at org.h2.engine.Session.prepareCommand(Session.java:402)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1188)
+	at org.h2.jdbc.JdbcStatement.executeInternal(JdbcStatement.java:170)
+	at org.h2.jdbc.JdbcStatement.execute(JdbcStatement.java:158)
+	at org.h2.server.web.WebApp.getResult(WebApp.java:1388)
+	at org.h2.server.web.WebApp.query(WebApp.java:1061)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1023)
+	at org.h2.server.web.WebApp$1.next(WebApp.java:1010)
+	at org.h2.server.web.WebThread.process(WebThread.java:164)
+	at org.h2.server.web.WebThread.run(WebThread.java:89)
+	at java.lang.Thread.run(Thread.java:745)
+2015-11-02 14:37:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ITEMS" not found; SQL statement:
+select * from items [42102-190]
+2015-11-02 15:56:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ITEM
+ALTER COLUMN ID INT AUTO_GENERATED[*] "; SQL statement:
+ALTER TABLE ITEM
+ALTER COLUMN ID int auto_generated [42000-190]
+2015-11-02 15:56:48 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ITEM
+ALTER COLUMN ID INT AUTO_GENERATED[*] "; SQL statement:
+ALTER TABLE ITEM
+ALTER COLUMN ID int auto_generated [42000-190]
+2015-11-02 15:57:26 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ITEM
+ALTER COLUMN ID INT AUTO_GENERATED[*] "; SQL statement:
+ALTER TABLE ITEM
+ALTER COLUMN ID int auto_generated [42000-190]
+2015-11-02 15:58:28 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ITEM
+ALTER COLUMN ID INT PRIMARY[*] KEY AUTO_GENERATED "; SQL statement:
+ALTER TABLE ITEM
+ALTER COLUMN ID int primary key auto_generated [42000-190]
+2015-11-02 15:58:42 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "ALTER TABLE ITEM
+ALTER COLUMN ID INT PRIMARY[*] KEY AUTO_GENERATED "; SQL statement:
+ALTER TABLE ITEM
+ALTER COLUMN ID int primary key auto_generated [42000-190]
+2015-11-02 16:12:11 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CUSTOMER_ORDER (ID INT AUTO_GENERATED[*], CUSTOMER_NAME VARCHAR(255), CUSTOMER_EMAIL VARCHAR(255), STATUS VARCHAR(255)) "; expected "(, FOR, UNSIGNED, NOT, NULL, AS, DEFAULT, GENERATED, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE CUSTOMER_ORDER (ID int auto_generated, CUSTOMER_NAME varchar(255), CUSTOMER_EMAIL varchar(255), STATUS varchar(255)) [42001-190]
+2015-11-02 16:13:13 jdbc[4]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE CUSTOMER_ORDER (ID INT GENERATED AUTO_INCREMENT[*], CUSTOMER_NAME VARCHAR(255), CUSTOMER_EMAIL VARCHAR(255), STATUS VARCHAR(255)) "; expected "ALWAYS, BY"; SQL statement:
+CREATE TABLE CUSTOMER_ORDER (ID int generated auto_increment, CUSTOMER_NAME varchar(255), CUSTOMER_EMAIL varchar(255), STATUS varchar(255)) [42001-190]

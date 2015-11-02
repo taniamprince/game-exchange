@@ -5,7 +5,7 @@ import java.util.Collection;
 
 public interface InventoryService extends Serializable {
 
-	public Inventory getAvailableInventory();
+	public Inventory getAvailableInventory();;
 	
 	public boolean validateQuantity(Collection<Item> items);
 	

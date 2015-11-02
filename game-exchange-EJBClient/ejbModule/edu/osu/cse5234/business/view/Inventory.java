@@ -4,6 +4,9 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+
 public class Inventory implements Serializable{
 
 	/**
