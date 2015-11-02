@@ -31,7 +31,7 @@ public class Inventory implements Serializable{
 		
 		for(Iterator<Item> i = inventoryList.iterator(); i.hasNext();){
 			Item temp = (Item) i.next();
-			if(Integer.parseInt(temp.getQuantity())>0){
+			if(temp.getQuantity()>0){
 				available.add(temp);
 			}
 		}
