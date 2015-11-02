@@ -22,8 +22,8 @@ public class Inventory implements Serializable{
 	
 	
 	public void addItem(String title, String quantity){
-		Item game = new Item(title,quantity);
-		inventoryList.add(game);
+		//Item game = new Item(title,quantity);
+		//inventoryList.add(game);
 	}
 	
 	public ArrayList<Item> getAvailableItems(){

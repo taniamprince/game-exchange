@@ -18,8 +18,8 @@ public class Order implements java.io.Serializable {
     }
 	
 	public void addItem(String title, String quantity){
-		Item game = new Item(title,quantity);
-		orderList.add(game);
+		//Item game = new Item(title,quantity);
+		//orderList.add(game);
 	}
 	
     public void setOrderList(ArrayList<Item> orderList) {

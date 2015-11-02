@@ -28,7 +28,7 @@ public class Purchase {
 		}
 		//checks for uncompleted order
 		
-		request.setAttribute("order", new Order());	
+		//request.setAttribute("order", new Order());	
 
 		return "OrderEntryForm";
 	}
