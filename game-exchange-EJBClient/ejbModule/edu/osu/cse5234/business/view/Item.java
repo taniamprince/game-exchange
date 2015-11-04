@@ -3,6 +3,7 @@ package edu.osu.cse5234.business.view;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -10,14 +11,14 @@ import javax.persistence.Table;
 @Table(name="ITEM") 
 public class Item implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-	@Id
-	@GeneratedValue
-	private int id;
 	private String title;
 	private String description;
 	private int quantity;
 	private double price;
-	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
+	private int id;
 	
 	public void setId(int id){
 		this.id = id;

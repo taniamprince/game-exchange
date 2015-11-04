@@ -9,14 +9,14 @@ import edu.osu.cse5234.business.view.Item;
 
 public class Order implements java.io.Serializable {
 	
-	public ArrayList<Item> orderList;
+	public List<Item> orderList;
 
 	
 	public Order(Inventory inventory) {
 		orderList =  inventory.getAvailableItems();
 
     }
-	
+
 	public void addItem(String title, String quantity){
 		//Item game = new Item(title,quantity);
 		//orderList.add(game);

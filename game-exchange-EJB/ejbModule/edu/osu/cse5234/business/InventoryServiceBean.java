@@ -20,6 +20,11 @@ import edu.osu.cse5234.business.view.Item;
 @Remote(InventoryService.class)
 public class InventoryServiceBean implements InventoryService, Serializable {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
 	Inventory inventoryList;
 	
 	@PersistenceContext private EntityManager entityManager;

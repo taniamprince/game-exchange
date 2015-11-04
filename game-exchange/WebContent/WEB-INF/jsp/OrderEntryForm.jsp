@@ -34,8 +34,10 @@
     	<td> <form:checkbox path="orderList[${pStatus.index}].quantity" value="1"/></td> 
  	</tr>
 </c:forEach>
-			
-		
+
+<c:forEach items="${order.orderList}" var="list" varStatus="pStatus">
+		${list.title}	
+</c:forEach>
 			
 	    </table>
 	    <input class="button" type="submit" value="Submit Order"/>
