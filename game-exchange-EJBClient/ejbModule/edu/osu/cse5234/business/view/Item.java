@@ -11,10 +11,10 @@ import javax.persistence.Table;
 @Table(name="ITEM") 
 public class Item implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
-	private String title;
+	private String name;
 	private String description;
-	private int quantity;
-	private double price;
+	private int available_quantity;
+	private double unit_price;
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
@@ -29,13 +29,13 @@ public class Item implements java.io.Serializable {
 		return id;
 	}
 	
-	public void setTitle(String title){
-		this.title = title;
+	public void setName(String name){
+		this.name = name;
 	}
 	
-	@Column(name="TITLE")
-	public String getTitle(){
-		return title;
+	@Column(name="NAME")
+	public String getName(){
+		return name;
 	}
 	
 	public void setDescription(String desc){
@@ -48,20 +48,20 @@ public class Item implements java.io.Serializable {
 	}
 
 	public void setQuantity(int quantity){
-		this.quantity = quantity;
+		this.available_quantity = quantity;
 	}
 	
 	@Column(name="AVAILABLE_QUANTITY")
 	public int getQuantity(){
-		return quantity;
+		return available_quantity;
 	}
 
 	public void setPrice(double price){
-		this.price = price;
+		this.unit_price = price;
 	}
 	
 	@Column(name="UNIT_PRICE")
 	public double getPrice(){
-		return price;
+		return unit_price;
 	}	
 }

@@ -29,7 +29,7 @@ public class Purchase {
 		//checks for uncompleted order
 		
 		//request.setAttribute("orderList", new Order());	
-		request.setAttribute("inventory", new Inventory());
+		request.setAttribute("inventory", ServiceLocator.getInventoryService().getAvailableInventory());
 
 		return "OrderEntryForm";
 	}

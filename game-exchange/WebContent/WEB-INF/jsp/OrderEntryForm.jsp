@@ -26,17 +26,16 @@
 				<th>Order</th>
 			</tr>
 	       
-	       
+	  	     
 			
-<c:forEach items="${order.orderList}" var="list" varStatus="pStatus">
+<c:forEach items="${inventory}" var="list" varStatus="pStatus">
   	<tr>      
-   		<td>${list.title}</td>
-    	<td> <form:checkbox path="orderList[${pStatus.index}].quantity" value="1"/></td> 
+   		<td>${list.name}</td>
  	</tr>
 </c:forEach>
 
-<c:forEach items="${order.orderList}" var="list" varStatus="pStatus">
-		${list.title}	
+<c:forEach items="${inventory}" var="list" varStatus="pStatus">
+		${list.name}	
 </c:forEach>
 			
 	    </table>
