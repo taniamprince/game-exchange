@@ -25,12 +25,14 @@
 				<th class="left-col">Title</th>
 				<th>Description</th>
 				<th>Price</th>
+				<th>Quantity</th>
 			</tr>			
 			<c:forEach items="${inventory}" var="list" varStatus="pStatus">
 		  	<tr>      
 		   		<td>${list.name}</td>
 		   		<td>${list.description}</td>
 		   		<td>${list.price}</td>
+		   		<td></td>
 		 	</tr>
 			</c:forEach>		
 	    </table>

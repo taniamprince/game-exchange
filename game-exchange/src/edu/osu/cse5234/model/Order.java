@@ -11,7 +11,6 @@ public class Order implements java.io.Serializable {
 	
 	public List<Item> orderList;
 
-	
 	public Order() {
 
     }
