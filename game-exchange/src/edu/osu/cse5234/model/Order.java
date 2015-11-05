@@ -1,32 +1,48 @@
 package edu.osu.cse5234.model;
-
-import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
-
-import edu.osu.cse5234.business.view.Inventory;
-import edu.osu.cse5234.business.view.Item;
+import edu.osu.cse5234.business.view.LineItem;
 
 public class Order implements java.io.Serializable {
-	
-	public List<Item> orderList;
-
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String customer_name;
+	private String customer_email;
+	private String status;
+	public List<LineItem> orderList;
+	    
 	public Order() {
 
     }
 
-	public void addItem(String title, String quantity){
-		//Item game = new Item(title,quantity);
-		//orderList.add(game);
+	public int getId() {
+		return id;
 	}
-	
-    public void setOrderList(ArrayList<Item> orderList) {
-        this.orderList = orderList;
-    }
-	
-	public List<Item> getOrderList(){
-		return this.orderList;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	
+
+	public String getCustomer_name() {
+		return customer_name;
+	}
+
+	public void setCustomer_name(String customer_name) {
+		this.customer_name = customer_name;
+	}
+
+	public String getCustomer_email() {
+		return customer_email;
+	}
+
+	public void setCustomer_email(String customer_email) {
+		this.customer_email = customer_email;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
 }

@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import edu.osu.cse5234.business.view.Inventory;
 import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
@@ -44,7 +43,7 @@ public class Purchase {
 		Order order = new Order();
 		for(int i = 0; i < inventory.size(); i++){
 			if(quantity.indexOf(i)>0){
-				order.addItem(inventory.indexOf(i), quantity.indexOf(i));
+				
 			}
 		}
 		

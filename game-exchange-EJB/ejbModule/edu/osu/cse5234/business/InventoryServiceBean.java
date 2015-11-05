@@ -43,18 +43,8 @@ public class InventoryServiceBean implements InventoryService, Serializable {
 	}
 	
 	@Override
-	public boolean validateQuantity(Collection<Item> items) {
-		boolean valid = true;
-		List<Item> inventory = getAvailableInventory();
-		for (Item item : items) {
-			for (int i = 0; i < inventory.size(); i++){
-				if (item.getQuantity() > inventory.get(i).getQuantity()){
-					valid = false;
-					break;
-				}
-			}
-		}	
-		return valid;
+	public <LineItem> boolean validateQuantity(List<LineItem> orderList) {
+		return true;
 	}
 
 	@Override

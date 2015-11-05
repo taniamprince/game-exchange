@@ -28,12 +28,7 @@ public class OrderProcessingServiceBean {
     	return "1";
     }
 
-    public boolean validateItemAvailability(Order order){
-    	
-    	
-    	return ServiceLocator.getInventoryService().validateQuantity(order.orderList);
-    	
-    	
-    	
+    public boolean validateItemAvailability(Order order){	 	
+    	return ServiceLocator.getInventoryService().validateQuantity(order.orderList);  	  	
     }
 }

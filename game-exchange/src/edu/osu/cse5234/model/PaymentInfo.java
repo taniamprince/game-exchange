@@ -1,47 +1,63 @@
 package edu.osu.cse5234.model;
 
 public class PaymentInfo implements java.io.Serializable {
-	private String ccNum;
-	private String expDate;
-	private String ccvCode;
-	private String name;
+	private static final long serialVersionUID = 1L;
+	private int id;
+	private String cardholder_name;
+	private int cc_num;
+	private String exp;
+	private int ccv;
+	private int customer_order_id;
 	
 	public PaymentInfo(){
-		ccNum = "";
-		expDate = "";
-		ccvCode = "";
-		name = "";
+		
 	}
-	
-	public void setCCNum(String ccNum){
-		this.ccNum = ccNum;
+
+	public int getId() {
+		return id;
 	}
-	
-	public String getCCNum(){
-		return ccNum;
+
+	public void setId(int id) {
+		this.id = id;
 	}
-	
-	public void setExpDate(String expDate){
-		this.expDate = expDate;
+
+	public String getCardholder_name() {
+		return cardholder_name;
 	}
-	
-	public String getExpDate(){
-		return expDate;
+
+	public void setCardholder_name(String cardholder_name) {
+		this.cardholder_name = cardholder_name;
 	}
-	
-	public void setCCVCode(String ccvCode){
-		this.ccvCode = ccvCode;
+
+	public int getCc_num() {
+		return cc_num;
 	}
-	
-	public String getCCVCode(){
-		return ccvCode;
+
+	public void setCc_num(int cc_num) {
+		this.cc_num = cc_num;
 	}
-	
-	public void setName(String name){
-		this.name = name;
+
+	public String getExp() {
+		return exp;
 	}
-	
-	public String getName(){
-		return name;
+
+	public void setExp(String exp) {
+		this.exp = exp;
+	}
+
+	public int getCcv() {
+		return ccv;
+	}
+
+	public void setCcv(int ccv) {
+		this.ccv = ccv;
+	}
+
+	public int getCustomer_order_id() {
+		return customer_order_id;
+	}
+
+	public void setCustomer_order_id(int customer_order_id) {
+		this.customer_order_id = customer_order_id;
 	}
 }
