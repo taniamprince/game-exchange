@@ -23,21 +23,16 @@
 	    <table>
 	    	<tr>
 				<th class="left-col">Title</th>
-				<th>Order</th>
-			</tr>
-	       
-	  	     
-			
-<c:forEach items="${inventory}" var="list" varStatus="pStatus">
-  	<tr>      
-   		<td>${list.name}</td>
- 	</tr>
-</c:forEach>
-
-<c:forEach items="${inventory}" var="list" varStatus="pStatus">
-		${list.name}	
-</c:forEach>
-			
+				<th>Description</th>
+				<th>Price</th>
+			</tr>			
+			<c:forEach items="${inventory}" var="list" varStatus="pStatus">
+		  	<tr>      
+		   		<td>${list.name}</td>
+		   		<td>${list.description}</td>
+		   		<td>${list.price}</td>
+		 	</tr>
+			</c:forEach>		
 	    </table>
 	    <input class="button" type="submit" value="Submit Order"/>
 		</form:form>
