@@ -5,6 +5,8 @@ import java.util.Iterator;
 
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 
 import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.model.Order;
@@ -17,6 +19,8 @@ import edu.osu.cse5234.util.ServiceLocator;
 @LocalBean
 public class OrderProcessingServiceBean {
 
+	@PersistenceContext private EntityManager entityManager;
+	
     /**
      * Default constructor. 
      */
@@ -29,6 +33,9 @@ public class OrderProcessingServiceBean {
     }
 
     public boolean validateItemAvailability(Order order){	 	
-    	return ServiceLocator.getInventoryService().validateQuantity(order.orderList);  	  	
+    	boolean validation = ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
+    	entityManager.persist(order);
+    	entityManager.flush();
+    	return validation;
     }
 }

@@ -1,7 +1,19 @@
 package edu.osu.cse5234.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="PAYMENT_INFO")
 public class PaymentInfo implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
 	private String cardholder_name;
 	private int cc_num;
@@ -21,6 +33,7 @@ public class PaymentInfo implements java.io.Serializable {
 		this.id = id;
 	}
 
+	@Column(name="CARDHOLDER_NAME")
 	public String getCardholder_name() {
 		return cardholder_name;
 	}
@@ -29,6 +42,7 @@ public class PaymentInfo implements java.io.Serializable {
 		this.cardholder_name = cardholder_name;
 	}
 
+	@Column(name="CC_NUM")
 	public int getCc_num() {
 		return cc_num;
 	}
@@ -37,6 +51,7 @@ public class PaymentInfo implements java.io.Serializable {
 		this.cc_num = cc_num;
 	}
 
+	@Column(name="EXP")
 	public String getExp() {
 		return exp;
 	}
@@ -45,6 +60,7 @@ public class PaymentInfo implements java.io.Serializable {
 		this.exp = exp;
 	}
 
+	@Column(name="CCV")
 	public int getCcv() {
 		return ccv;
 	}
@@ -53,6 +69,7 @@ public class PaymentInfo implements java.io.Serializable {
 		this.ccv = ccv;
 	}
 
+	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
 		return customer_order_id;
 	}

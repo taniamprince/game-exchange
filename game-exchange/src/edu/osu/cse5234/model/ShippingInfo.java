@@ -1,7 +1,19 @@
 package edu.osu.cse5234.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="SHIPPING_INFO")
 public class ShippingInfo implements java.io.Serializable {
 	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="ID")
 	private int id;
 	private String address1;
 	private String address2;
@@ -21,6 +33,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.id = id;
 	}
 
+	@Column(name="ADDRESS1")
 	public String getAddress1() {
 		return address1;
 	}
@@ -29,6 +42,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.address1 = address1;
 	}
 
+	@Column(name="ADDRESS2")
 	public String getAddress2() {
 		return address2;
 	}
@@ -37,6 +51,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.address2 = address2;
 	}
 
+	@Column(name="CITY")
 	public String getCity() {
 		return city;
 	}
@@ -45,6 +60,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.city = city;
 	}
 
+	@Column(name="STATE")
 	public String getState() {
 		return state;
 	}
@@ -53,6 +69,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.state = state;
 	}
 
+	@Column(name="ZIP")
 	public int getZip() {
 		return zip;
 	}
@@ -61,6 +78,7 @@ public class ShippingInfo implements java.io.Serializable {
 		this.zip = zip;
 	}
 
+	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
 		return customer_order_id;
 	}
