@@ -23,7 +23,7 @@
 			</tr>
 	       <c:forEach items="${sessionScope.order.orderList}" var="list" varStatus="pStatus">
   	<tr>      
-   		<td>${list.title}</td>
+   		<td>${list.item_name}</td>
     	<td>${list.quantity}</td> 
  	</tr>
 </c:forEach>
@@ -34,19 +34,19 @@
 	    <table>
 	    	<tr>
 	    		<td class="left-col">Name: </td>
-	    		<td>${sessionScope.payment.name}</td>
+	    		<td>${sessionScope.payment.cardholder_name}</td>
 	    	</tr>
 	    	<tr>
 	    		<td>CC Number: </td>
-	    		<td>${sessionScope.payment.CCNum}</td>
+	    		<td>${sessionScope.payment.cc_num}</td>
 	    	</tr>
 	    	<tr>
 	    		<td>Exp: </td>
-	    		<td>${sessionScope.payment.expDate}</td>
+	    		<td>${sessionScope.payment.exp}</td>
 	    	</tr>
 	    	<tr>
 	    		<td>CCV: </td>
-	    		<td>${sessionScope.payment.CCVCode}</td>
+	    		<td>${sessionScope.payment.ccv}</td>
 	    	</tr>
 	    </table>
 	    

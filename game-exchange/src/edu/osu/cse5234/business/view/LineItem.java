@@ -24,10 +24,20 @@ public class LineItem {
 		
 	}
 	
+	public LineItem(Item item, int cust_id, int quantity){
+		
+		item_id = item.getID();
+		item_name = item.getName();
+	    this.quantity = quantity;
+	    customer_order_id_fk = cust_id;
+	    
+	}
+	
 	public void setId(int id){
 		this.id = id;
 	}
 	
+	@Column(name="ID")
 	public int getId(){
 		return id;
 	}
@@ -36,6 +46,7 @@ public class LineItem {
 		this.item_id = id;
 	}
 	
+	@Column(name="ITEM_ID")
 	public int getItem_id(){
 		return item_id;
 	}
@@ -53,15 +64,16 @@ public class LineItem {
 		this.quantity = quantity;
 	}
 	
+	@Column(name="QUANTITY")
 	public int getQuantity(){
 		return quantity;
 	}
-	
-	@Column(name="CUSTOMER_ORDER_ID_FK")
+		
 	public void setCustomer_order_id_fk(int id){
 		this.customer_order_id_fk = id;
 	}
 	
+	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id_fk(){
 		return customer_order_id_fk;
 	}

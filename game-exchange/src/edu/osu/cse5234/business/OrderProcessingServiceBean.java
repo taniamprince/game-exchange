@@ -1,5 +1,6 @@
 package edu.osu.cse5234.business;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Iterator;
 
@@ -17,7 +18,7 @@ import edu.osu.cse5234.util.ServiceLocator;
  */
 @Stateless
 @LocalBean
-public class OrderProcessingServiceBean {
+public class OrderProcessingServiceBean implements Serializable {
 
 	@PersistenceContext private EntityManager entityManager;
 	
@@ -33,9 +34,10 @@ public class OrderProcessingServiceBean {
     }
 
     public boolean validateItemAvailability(Order order){	 	
-    	boolean validation = ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
-    	entityManager.persist(order);
-    	entityManager.flush();
-    	return validation;
+    	//boolean validation = ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
+    	//entityManager.persist(order);
+    	//entityManager.flush();
+    	//return validation;
+    	return true;
     }
 }

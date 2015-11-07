@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import edu.osu.cse5234.business.view.Item;
+import edu.osu.cse5234.business.view.LineItem;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
+import edu.osu.cse5234.model.QuantityWrapper;
 import edu.osu.cse5234.model.ShippingInfo;
 import edu.osu.cse5234.util.ServiceLocator;
 
@@ -32,18 +34,27 @@ public class Purchase {
 		//checks for uncompleted order
 		
 		List<Item> inventory = ServiceLocator.getInventoryService().getAvailableInventory();
+		ArrayList<Integer> quantity = new ArrayList<Integer>();
+		for(int i = 0; i <inventory.size(); i++){
+			quantity.add(0);
+		}
 		request.setAttribute("inventory", inventory);
-		request.setAttribute("quantity", new ArrayList<Integer>(inventory.size()));
+		request.getSession().setAttribute("inventory", inventory);
+		QuantityWrapper q = new QuantityWrapper();
+		q.setQuantity(quantity);
+		request.setAttribute("quantity",q );
 		
 		return "OrderEntryForm";
 	}
 
 	@RequestMapping(path = "/submitItems", method = RequestMethod.POST)
-	public String submitItems(@ModelAttribute("inventory") List<Item> inventory, @ModelAttribute("quantity") List<Integer> quantity, HttpServletRequest request) {
+	public String submitItems(@ModelAttribute("quantity") QuantityWrapper quantity, HttpServletRequest request) {
 		Order order = new Order();
+		List<Item> inventory = (List<Item>) request.getSession().getAttribute("inventory");
+		
 		for(int i = 0; i < inventory.size(); i++){
-			if(quantity.indexOf(i)>0){
-				
+			if(quantity.getQuantity().get(i)>0){
+				order.addItem(inventory.get(i),quantity.getQuantity().get(i));
 			}
 		}
 		

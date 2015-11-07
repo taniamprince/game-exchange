@@ -1,4 +1,5 @@
 package edu.osu.cse5234.model;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -11,6 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.business.view.LineItem;
 
 @Entity
@@ -35,9 +37,13 @@ public class Order implements java.io.Serializable {
 	private List<ShippingInfo> shippingInfoList;
 	    
 	public Order() {
-
+		orderList = new ArrayList<LineItem>();
+		paymentInfoList = new ArrayList<PaymentInfo>();
+		shippingInfoList = new ArrayList<ShippingInfo>();
     }
 
+	
+	@Column(name="ID")
 	public int getId() {
 		return id;
 	}
@@ -95,5 +101,9 @@ public class Order implements java.io.Serializable {
 
 	private void setShippingInfoList(List<ShippingInfo> shippingInfoList) {
 		this.shippingInfoList = shippingInfoList;
+	}
+	
+	public void addItem(Item item, int quantity){
+		orderList.add(new LineItem(item,id, quantity));
 	}
 }

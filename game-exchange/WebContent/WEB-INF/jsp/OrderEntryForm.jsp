@@ -19,7 +19,7 @@
 	</c:if>
 		<h2>Games</h2>
 		<hr>
-		<form:form modelAttribute="order" method="post" action="purchase/submitItems">
+		<form:form modelAttribute="quantity" method="post" action="purchase/submitItems">
 	    <table>
 	    	<tr>
 				<th class="left-col">Title</th>
@@ -29,9 +29,12 @@
 			</tr>			
 			<c:forEach items="${inventory}" var="list" varStatus="pStatus">
 		  	<tr>      
+		  		
 		   		<td>${list.name}</td>
 		   		<td>${list.description}</td>
 		   		<td>${list.price}</td>
+		   		<td><form:input path="quantity[${pStatus.index}]" />
+		   		
 		   		<td></td>
 		 	</tr>
 			</c:forEach>		

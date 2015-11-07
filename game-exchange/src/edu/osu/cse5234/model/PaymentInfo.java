@@ -25,6 +25,7 @@ public class PaymentInfo implements java.io.Serializable {
 		
 	}
 
+	@Column(name="ID")
 	public int getId() {
 		return id;
 	}

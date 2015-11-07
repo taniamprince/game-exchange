@@ -25,6 +25,7 @@ public class ShippingInfo implements java.io.Serializable {
 	public ShippingInfo(){
 	}
 
+	@Column(name="ID")
 	public int getId() {
 		return id;
 	}

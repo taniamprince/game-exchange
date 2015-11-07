@@ -19,19 +19,19 @@
 	    	<tr>
 	        	
 	    		<td class="left-col">Name: </td>
-	    		<td><form:input path="name" /></td>
+	    		<td><form:input path="cardholder_name" /></td>
 	    	</tr>
 	    	<tr>
 	    		<td>CC Number: </td>
-	    		<td><form:input path="CCNum"/></td>
+	    		<td><form:input path="cc_num"/></td>
 	    	</tr>
 	    	<tr>
 	    		<td>Exp: </td>
-	    		<td><form:input path="expDate"/></td>
+	    		<td><form:input path="exp"/></td>
 	    	</tr>
 	    	<tr>
 	    		<td>CCV: </td>
-	    		<td><form:input path="CCVCode"/></td>
+	    		<td><form:input path="ccv"/></td>
 	    	</tr>
 	    </table>
 	    <input class="button" type="submit" value="Next"/>
