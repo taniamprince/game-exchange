@@ -96,20 +96,17 @@ public class Purchase {
 	
 	@RequestMapping(path = "/viewOrder", method = RequestMethod.GET)
 	public String viewOrderPage(HttpServletRequest request, HttpServletResponse response) {
-		//request.setAttribute("shipping", new PaymentInfo());	
 		return "ViewOrder";
 	}	
 	
 	@RequestMapping(path = "/confirmation", method = RequestMethod.POST)
 	public String submitOrder(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		//request.getSession().setAttribute("order", order);
 		request.getSession().setAttribute("confirmation", ServiceLocator.getOrderProcessingService().processOrder(order));
 		return "redirect:confirmation";
 	}
 	
 	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
 	public String viewConfirmationPage(HttpServletRequest request, HttpServletResponse response) {
-		//request.setAttribute("shipping", new PaymentInfo());	
 		return "Confirmation";
 	}
 }

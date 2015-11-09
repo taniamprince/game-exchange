@@ -34,7 +34,7 @@
 	    	</tr>
 	    	<tr>
 	    		<td>Zip: </td>
-	    		<td><form:input path="zip"/></td>
+	    		<td><form:input path="zipString"/></td>
 	    	</tr>
 	    </table>
 	    <input class="button" type="submit" value="Next"/>

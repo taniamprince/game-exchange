@@ -23,7 +23,7 @@
 	    	</tr>
 	    	<tr>
 	    		<td>CC Number: </td>
-	    		<td><form:input path="cc_num"/></td>
+	    		<td><form:input path="cc_numString"/></td>
 	    	</tr>
 	    	<tr>
 	    		<td>Exp: </td>
@@ -31,7 +31,7 @@
 	    	</tr>
 	    	<tr>
 	    		<td>CCV: </td>
-	    		<td><form:input path="ccv"/></td>
+	    		<td><form:input path="ccvString"/></td>
 	    	</tr>
 	    </table>
 	    <input class="button" type="submit" value="Next"/>

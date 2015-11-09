@@ -51,6 +51,21 @@ public class PaymentInfo implements java.io.Serializable {
 	public void setCc_num(int cc_num) {
 		this.cc_num = cc_num;
 	}
+	
+	public String getCc_numString(){
+		String ccNum = "";
+		if(cc_num !=0){
+			ccNum = ""+cc_num;
+		}
+		return ccNum;
+	}
+	public void setCc_numString(String ccNum){
+		if(ccNum!=""){
+		cc_num = Integer.parseInt(ccNum);
+		}else{
+			cc_num = 0;
+		}
+	}
 
 	@Column(name="EXP")
 	public String getExp() {
@@ -70,6 +85,22 @@ public class PaymentInfo implements java.io.Serializable {
 		this.ccv = ccv;
 	}
 
+	public String getCcvString() {
+		String ccvString = "";
+		if(ccv!=0){
+			ccvString = ""+ccv;
+		}
+		return ccvString;
+	}
+
+	public void setCcvString(String ccv) {
+		if(ccv==""){
+			this.ccv = 0;
+		}else{
+			this.ccv = Integer.parseInt(ccv);
+		}
+	}
+	
 	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
 		return customer_order_id;

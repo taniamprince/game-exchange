@@ -30,13 +30,13 @@ public class OrderProcessingServiceBean implements Serializable {
     }
     
     public String processOrder(Order order) {
-    	return "1";
+    	entityManager.persist(order);
+    	entityManager.flush();
+    	return "" + order.getId();
     }
 
     public boolean validateItemAvailability(Order order){	 	
     	//boolean validation = ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
-    	//entityManager.persist(order);
-    	//entityManager.flush();
     	//return validation;
     	return true;
     }

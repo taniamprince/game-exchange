@@ -12,6 +12,7 @@ import javax.persistence.PersistenceContext;
 import edu.osu.cse5234.business.view.Inventory;
 import edu.osu.cse5234.business.view.InventoryService;
 import edu.osu.cse5234.business.view.Item;
+import edu.osu.cse5234.business.view.LineItem;
 
 /**
  * Session Bean implementation class InventoryServiceBean
@@ -43,7 +44,7 @@ public class InventoryServiceBean implements InventoryService, Serializable {
 	}
 	
 	@Override
-	public <LineItem> boolean validateQuantity(List<LineItem> orderList) {
+	public boolean validateQuantity(List<LineItem> orderList) {
 		return true;
 	}
 

@@ -11,7 +11,7 @@ public interface InventoryService extends Serializable {
 
 	public List<Item> getAvailableInventory();
 	
-	public <LineItem> boolean validateQuantity(List<LineItem> orderList);
+	public boolean validateQuantity(List<LineItem> orderList);
 	
 	public boolean updateInventory(Collection<Item> items);
 	

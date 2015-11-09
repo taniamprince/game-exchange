@@ -78,7 +78,18 @@ public class ShippingInfo implements java.io.Serializable {
 	public void setZip(int zip) {
 		this.zip = zip;
 	}
-
+	
+	public String getZipString(){
+		String z = "";
+		if(zip!=0){
+			z = ""+zip;
+		}
+		return z;
+	}
+	public void setZipString(String zip){
+		this.zip = Integer.parseInt(zip);
+	}
+	
 	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
 		return customer_order_id;
