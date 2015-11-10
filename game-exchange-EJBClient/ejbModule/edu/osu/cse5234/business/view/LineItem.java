@@ -15,7 +15,6 @@ public class LineItem {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
-	private int item_id;
 	private String item_name;
 	private int quantity;
 	private int customer_order_id_fk;
@@ -26,7 +25,7 @@ public class LineItem {
 	
 	public LineItem(Item item, int cust_id, int quantity){
 		
-		item_id = item.getID();
+		id = item.getID();
 		item_name = item.getName();
 	    this.quantity = quantity;
 	    customer_order_id_fk = cust_id;
@@ -40,15 +39,6 @@ public class LineItem {
 	@Column(name="ID")
 	public int getId(){
 		return id;
-	}
-	
-	public void setItem_id(int id){
-		this.item_id = id;
-	}
-	
-	@Column(name="ITEM_ID")
-	public int getItem_id(){
-		return item_id;
 	}
 	
 	public void setItem_name(String name){

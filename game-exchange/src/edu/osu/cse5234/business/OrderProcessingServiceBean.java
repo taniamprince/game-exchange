@@ -11,6 +11,8 @@ import javax.persistence.PersistenceContext;
 
 import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.model.Order;
+import edu.osu.cse5234.model.PaymentInfo;
+import edu.osu.cse5234.model.ShippingInfo;
 import edu.osu.cse5234.util.ServiceLocator;
 
 /**
@@ -29,7 +31,7 @@ public class OrderProcessingServiceBean implements Serializable {
         // TODO Auto-generated constructor stub
     }
     
-    public String processOrder(Order order) {
+    public String processOrder(Order order, PaymentInfo payment, ShippingInfo shipping) {
     	entityManager.persist(order);
     	entityManager.flush();
     	return "" + order.getId();

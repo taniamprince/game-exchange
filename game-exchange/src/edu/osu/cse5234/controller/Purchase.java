@@ -101,12 +101,12 @@ public class Purchase {
 	
 	@RequestMapping(path = "/confirmation", method = RequestMethod.POST)
 	public String submitOrder(@ModelAttribute("order") Order order, HttpServletRequest request) {
-		request.getSession().setAttribute("confirmation", ServiceLocator.getOrderProcessingService().processOrder(order));
 		return "redirect:confirmation";
 	}
 	
 	@RequestMapping(path = "/confirmation", method = RequestMethod.GET)
 	public String viewConfirmationPage(HttpServletRequest request, HttpServletResponse response) {
+		request.getSession().setAttribute("confirmation", ServiceLocator.getOrderProcessingService().processOrder((Order) request.getSession().getAttribute("order"), (PaymentInfo) request.getSession().getAttribute("payment"), (ShippingInfo) request.getSession().getAttribute("shipping")));
 		return "Confirmation";
 	}
 }
