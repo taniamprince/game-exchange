@@ -28,18 +28,15 @@
 				<th>Quantity</th>
 			</tr>			
 			<c:forEach items="${inventory}" var="list" varStatus="pStatus">
-		  	<tr>      
-		  		
+		  	<tr>      		  		
 		   		<td>${list.name}</td>
 		   		<td>${list.description}</td>
 		   		<td>${list.price}</td>
-		   		<td><form:input path="quantity[${pStatus.index}]" />
-		   		
-		   		<td></td>
+		   		<td><form:input path="quantity[${pStatus.index}]" /></td>
 		 	</tr>
 			</c:forEach>		
 	    </table>
-	    <input class="button" type="submit" value="Submit Order"/>
+	    <input class="button" type="submit" value="Next"/>
 		</form:form>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>

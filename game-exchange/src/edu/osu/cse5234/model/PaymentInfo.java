@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PAYMENT_INFO")
@@ -19,7 +20,7 @@ public class PaymentInfo implements java.io.Serializable {
 	private int cc_num;
 	private String exp;
 	private int ccv;
-	private int customer_order_id;
+	private int customer_order_id_fk;
 	
 	public PaymentInfo(){
 		
@@ -103,10 +104,10 @@ public class PaymentInfo implements java.io.Serializable {
 	
 	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
-		return customer_order_id;
+		return customer_order_id_fk;
 	}
 
 	public void setCustomer_order_id(int customer_order_id) {
-		this.customer_order_id = customer_order_id;
+		this.customer_order_id_fk = customer_order_id;
 	}
 }

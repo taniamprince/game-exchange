@@ -20,7 +20,7 @@ public class ShippingInfo implements java.io.Serializable {
 	private String city;
 	private String state;
 	private int zip;
-	private int customer_order_id;
+	private int customer_order_id_fk;
 	
 	public ShippingInfo(){
 	}
@@ -92,11 +92,11 @@ public class ShippingInfo implements java.io.Serializable {
 	
 	@Column(name="CUSTOMER_ORDER_ID_FK")
 	public int getCustomer_order_id() {
-		return customer_order_id;
+		return customer_order_id_fk;
 	}
 
 	public void setCustomer_order_id(int customer_order_id) {
-		this.customer_order_id = customer_order_id;
+		this.customer_order_id_fk = customer_order_id;
 	}
 	
 }

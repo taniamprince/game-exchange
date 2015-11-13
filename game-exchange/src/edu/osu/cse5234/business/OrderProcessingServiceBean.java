@@ -33,6 +33,8 @@ public class OrderProcessingServiceBean implements Serializable {
     
     public String processOrder(Order order, PaymentInfo payment, ShippingInfo shipping) {
     	entityManager.persist(order);
+    	entityManager.persist(payment);
+    	entityManager.persist(shipping);
     	entityManager.flush();
     	return "" + order.getId();
     }
