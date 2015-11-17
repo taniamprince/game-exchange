@@ -25,7 +25,12 @@
   </xs:complexType>
 
   <xs:complexType name="creditCardPayment">
-    <xs:sequence/>
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cardholder_name" type="xs:string"/>
+      <xs:element name="cc_num" type="xs:int"/>
+      <xs:element name="ccv" type="xs:int"/>
+      <xs:element minOccurs="0" name="exp" type="xs:string"/>
+    </xs:sequence>
   </xs:complexType>
 
   <xs:complexType name="processPaymentResponse">

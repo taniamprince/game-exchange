@@ -7,6 +7,7 @@ package com.chase.payment;
 
 import javax.xml.bind.annotation.XmlAccessType;
 import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlType;
 
 
@@ -20,6 +21,10 @@ import javax.xml.bind.annotation.XmlType;
  *   &lt;complexContent>
  *     &lt;restriction base="{http://www.w3.org/2001/XMLSchema}anyType">
  *       &lt;sequence>
+ *         &lt;element name="cardholder_name" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
+ *         &lt;element name="cc_num" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="ccv" type="{http://www.w3.org/2001/XMLSchema}int"/>
+ *         &lt;element name="exp" type="{http://www.w3.org/2001/XMLSchema}string" minOccurs="0"/>
  *       &lt;/sequence>
  *     &lt;/restriction>
  *   &lt;/complexContent>
@@ -29,8 +34,99 @@ import javax.xml.bind.annotation.XmlType;
  * 
  */
 @XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "creditCardPayment")
+@XmlType(name = "creditCardPayment", propOrder = {
+    "cardholderName",
+    "ccNum",
+    "ccv",
+    "exp"
+})
 public class CreditCardPayment {
 
+    @XmlElement(name = "cardholder_name")
+    protected String cardholderName;
+    @XmlElement(name = "cc_num")
+    protected int ccNum;
+    protected int ccv;
+    protected String exp;
+
+    /**
+     * Gets the value of the cardholderName property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getCardholderName() {
+        return cardholderName;
+    }
+
+    /**
+     * Sets the value of the cardholderName property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setCardholderName(String value) {
+        this.cardholderName = value;
+    }
+
+    /**
+     * Gets the value of the ccNum property.
+     * 
+     */
+    public int getCcNum() {
+        return ccNum;
+    }
+
+    /**
+     * Sets the value of the ccNum property.
+     * 
+     */
+    public void setCcNum(int value) {
+        this.ccNum = value;
+    }
+
+    /**
+     * Gets the value of the ccv property.
+     * 
+     */
+    public int getCcv() {
+        return ccv;
+    }
+
+    /**
+     * Sets the value of the ccv property.
+     * 
+     */
+    public void setCcv(int value) {
+        this.ccv = value;
+    }
+
+    /**
+     * Gets the value of the exp property.
+     * 
+     * @return
+     *     possible object is
+     *     {@link String }
+     *     
+     */
+    public String getExp() {
+        return exp;
+    }
+
+    /**
+     * Sets the value of the exp property.
+     * 
+     * @param value
+     *     allowed object is
+     *     {@link String }
+     *     
+     */
+    public void setExp(String value) {
+        this.exp = value;
+    }
 
 }

@@ -21,6 +21,7 @@ public class PaymentInfo implements java.io.Serializable {
 	private String exp;
 	private int ccv;
 	private int customer_order_id_fk;
+	private int conformation_number;
 	
 	public PaymentInfo(){
 		
@@ -109,5 +110,14 @@ public class PaymentInfo implements java.io.Serializable {
 
 	public void setCustomer_order_id(int customer_order_id) {
 		this.customer_order_id_fk = customer_order_id;
+	}
+
+	@Column(name="CONFORMATION_NUMBER")
+	public int getConformationNumber() {
+		return conformation_number;
+	}
+
+	public void setConformationNumber(int conformationNumber) {
+		this.conformation_number = conformationNumber;
 	}
 }
