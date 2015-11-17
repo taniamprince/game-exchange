@@ -64,15 +64,16 @@ public class Purchase {
 		}
 		
 		request.getSession().setAttribute("order", order);
-		if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
-			
-			request.getSession().setAttribute("failed", false);
-			return "redirect:/purchase/paymentEntry";
-		}
-		else{
-			request.getSession().setAttribute("failed", "true");
-			return "redirect:/purchase";
-		}
+		//if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
+		//	
+		//	request.getSession().setAttribute("failed", "false");
+		//	return "redirect:/purchase/paymentEntry";
+		//}
+		//else{
+		//	request.getSession().setAttribute("failed", "true");
+		//	return "redirect:/purchase";
+		//}
+		return "redirect:/purchase/paymentEntry";
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
