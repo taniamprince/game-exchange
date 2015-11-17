@@ -47,7 +47,7 @@ public class OrderProcessingServiceBean implements Serializable {
     	ccp.setExp(payment.getExp());
     	int paymentNumber = Integer.parseInt(service.getPaymentProcessorPort().processPayment(ccp));
     	if (paymentNumber >= 0) {
-    		//payment.setConformationNumber();
+    		payment.setConformationNumber(paymentNumber);
     		entityManager.persist(order);
     		entityManager.persist(payment);
     		entityManager.persist(shipping);
