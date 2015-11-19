@@ -104,11 +104,11 @@ public class PaymentInfo implements java.io.Serializable {
 	}
 	
 	@Column(name="CUSTOMER_ORDER_ID_FK")
-	public int getCustomer_order_id() {
+	public int getCustomer_order_id_fk() {
 		return customer_order_id_fk;
 	}
 
-	public void setCustomer_order_id(int customer_order_id) {
+	public void setCustomer_order_id_fk(int customer_order_id) {
 		this.customer_order_id_fk = customer_order_id;
 	}
 

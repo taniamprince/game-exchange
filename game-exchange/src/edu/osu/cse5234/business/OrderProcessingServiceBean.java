@@ -14,6 +14,7 @@ import com.chase.payment.CreditCardPayment;
 import com.chase.payment.PaymentProcessorService;
 
 import edu.osu.cse5234.business.view.Item;
+import edu.osu.cse5234.business.view.LineItem;
 import edu.osu.cse5234.model.Order;
 import edu.osu.cse5234.model.PaymentInfo;
 import edu.osu.cse5234.model.ShippingInfo;
@@ -48,6 +49,7 @@ public class OrderProcessingServiceBean implements Serializable {
     	int paymentNumber = Integer.parseInt(service.getPaymentProcessorPort().processPayment(ccp));
     	if (paymentNumber >= 0) {
     		payment.setConformationNumber(paymentNumber);
+    		order.setStatus("Pending");
     		entityManager.persist(order);
     		entityManager.persist(payment);
     		entityManager.persist(shipping);
