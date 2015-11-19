@@ -1,12 +1,14 @@
 package edu.osu.cse5234.model;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name="PAYMENT_INFO")
@@ -20,7 +22,6 @@ public class PaymentInfo implements java.io.Serializable {
 	private int cc_num;
 	private String exp;
 	private int ccv;
-	private int customer_order_id_fk;
 	private int conformation_number;
 	
 	public PaymentInfo(){
@@ -101,15 +102,6 @@ public class PaymentInfo implements java.io.Serializable {
 		}else{
 			this.ccv = Integer.parseInt(ccv);
 		}
-	}
-	
-	@Column(name="CUSTOMER_ORDER_ID_FK")
-	public int getCustomer_order_id_fk() {
-		return customer_order_id_fk;
-	}
-
-	public void setCustomer_order_id_fk(int customer_order_id) {
-		this.customer_order_id_fk = customer_order_id;
 	}
 
 	@Column(name="CONFORMATION_NUMBER")

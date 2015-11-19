@@ -26,7 +26,7 @@ public class InventoryServiceBean implements InventoryService, Serializable {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	Inventory inventoryList;
+	List<Item> inventoryList;
 	
 	@PersistenceContext private EntityManager entityManager;
 	String MY_QUERY = "Select i from Item i";
@@ -45,7 +45,15 @@ public class InventoryServiceBean implements InventoryService, Serializable {
 	
 	@Override
 	public boolean validateQuantity(List<LineItem> orderList) {
-		return true;
+		boolean valid = true;
+		inventoryList = getAvailableInventory();
+		for (int i = 0; i < orderList.size(); i++){
+			if (orderList.get(i).getQuantity() > inventoryList.get(i).getQuantity()){
+				valid = false;
+				break;
+			}
+		}
+		return valid;
 	}
 
 	@Override

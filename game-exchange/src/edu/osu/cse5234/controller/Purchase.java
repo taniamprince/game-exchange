@@ -86,17 +86,6 @@ public class Purchase {
 	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, 
             BindingResult result, HttpServletRequest request, SessionStatus status) {
 		request.getSession().setAttribute("payment", payment);
-
-		// Validate form		
-		//validator.validate(payment, result);
-        
-		// Check for validation errors
-        //if (result.hasErrors()) {
-        //    return "/submitPayment";
-        //}
-        
-        // Mark session complete
-        //status.setComplete();
         
 		return "redirect:shippingEntry";
 	}

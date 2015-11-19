@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import edu.osu.cse5234.business.view.Item;
@@ -23,25 +24,24 @@ public class Order implements java.io.Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name="ID")
 	private int id;
-	private String customer_name;
-	private String customer_email;
-	private String status;
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
 	private List<LineItem> orderList;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
-	private List<PaymentInfo> paymentInfoList;
-	@OneToMany(cascade = CascadeType.ALL)
-	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
-	private List<ShippingInfo> shippingInfoList;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="PAYMENT_ID")
+	private PaymentInfo paymentInfo;
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name="SHIPPING_ID")
+	private ShippingInfo shippingInfo;
+	private String customer_name;
+	private String customer_email;
+	private String status;
 	    
 	public Order() {
 		orderList = new ArrayList<LineItem>();
-		paymentInfoList = new ArrayList<PaymentInfo>();
-		shippingInfoList = new ArrayList<ShippingInfo>();
+		paymentInfo = new PaymentInfo();
+		shippingInfo = new ShippingInfo();
     }
-
 	
 	@Column(name="ID")
 	public int getId() {
@@ -88,19 +88,19 @@ public class Order implements java.io.Serializable {
 	}
 
 	private List<PaymentInfo> getPaymentInfoList() {
-		return paymentInfoList;
+		return getPaymentInfoList();
 	}
 
 	private void setPaymentInfoList(List<PaymentInfo> paymentInfoList) {
-		this.paymentInfoList = paymentInfoList;
+		this.paymentInfo = paymentInfo;
 	}
 
 	private List<ShippingInfo> getShippingInfoList() {
-		return shippingInfoList;
+		return getShippingInfoList();
 	}
 
-	private void setShippingInfoList(List<ShippingInfo> shippingInfoList) {
-		this.shippingInfoList = shippingInfoList;
+	private void setShippingInfoList(ShippingInfo shippingInfo) {
+		this.shippingInfo = shippingInfo;
 	}
 	
 	public void addItem(Item item, int quantity){
