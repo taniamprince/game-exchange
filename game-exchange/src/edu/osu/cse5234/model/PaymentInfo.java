@@ -23,9 +23,11 @@ public class PaymentInfo implements java.io.Serializable {
 	private String exp;
 	private int ccv;
 	private int conformation_number;
+	private int customer_order_id_fk;
+	private String invalid;
 	
 	public PaymentInfo(){
-		
+		invalid = "";
 	}
 
 	@Column(name="ID")
@@ -63,10 +65,14 @@ public class PaymentInfo implements java.io.Serializable {
 		return ccNum;
 	}
 	public void setCc_numString(String ccNum){
-		if(ccNum!=""){
-		cc_num = Integer.parseInt(ccNum);
-		}else{
-			cc_num = 0;
+		try{
+			cc_num = Integer.parseInt(ccNum);
+		}catch(Exception e){
+			if(invalid.equals("")){
+				invalid = "CC Num";
+			}else{
+				invalid = invalid +", CC Num";
+			}
 		}
 	}
 
@@ -97,10 +103,14 @@ public class PaymentInfo implements java.io.Serializable {
 	}
 
 	public void setCcvString(String ccv) {
-		if(ccv==""){
-			this.ccv = 0;
-		}else{
+		try{
 			this.ccv = Integer.parseInt(ccv);
+		}catch(Exception e){
+			if(invalid.equals("")){
+				invalid = "CCV";
+			}else{
+				invalid = invalid +", CCV";
+			}
 		}
 	}
 
@@ -111,5 +121,19 @@ public class PaymentInfo implements java.io.Serializable {
 
 	public void setConformationNumber(int conformationNumber) {
 		this.conformation_number = conformationNumber;
+	}
+	
+	public String getInvalid(){
+		String temp = invalid;
+		invalid = "";
+		return temp;
+	}
+
+	public int getCustomer_order_id_fk() {
+		return customer_order_id_fk;
+	}
+
+	public void setCustomer_order_id_fk(int customer_order_id_fk) {
+		this.customer_order_id_fk = customer_order_id_fk;
 	}
 }

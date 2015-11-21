@@ -27,20 +27,12 @@ public class Order implements java.io.Serializable {
 	@OneToMany(cascade = CascadeType.ALL)
 	@JoinColumn(name="CUSTOMER_ORDER_ID_FK")
 	private List<LineItem> orderList;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="PAYMENT_ID")
-	private PaymentInfo paymentInfo;
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name="SHIPPING_ID")
-	private ShippingInfo shippingInfo;
 	private String customer_name;
 	private String customer_email;
 	private String status;
 	    
 	public Order() {
 		orderList = new ArrayList<LineItem>();
-		paymentInfo = new PaymentInfo();
-		shippingInfo = new ShippingInfo();
     }
 	
 	@Column(name="ID")
@@ -85,22 +77,6 @@ public class Order implements java.io.Serializable {
 
 	public void setOrderList(List<LineItem> orderList) {
 		this.orderList = orderList;
-	}
-
-	private List<PaymentInfo> getPaymentInfoList() {
-		return getPaymentInfoList();
-	}
-
-	private void setPaymentInfoList(List<PaymentInfo> paymentInfoList) {
-		this.paymentInfo = paymentInfo;
-	}
-
-	private List<ShippingInfo> getShippingInfoList() {
-		return getShippingInfoList();
-	}
-
-	private void setShippingInfoList(ShippingInfo shippingInfo) {
-		this.shippingInfo = shippingInfo;
 	}
 	
 	public void addItem(Item item, int quantity){

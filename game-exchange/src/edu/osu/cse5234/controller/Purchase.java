@@ -33,15 +33,16 @@ public class Purchase {
 		
 		if(request.getSession().getAttribute("failed")=="true"){
 			request.setAttribute("failed", true);
+			request.getSession().setAttribute("failed", false);
 		}else{
 			request.setAttribute("failed", false);
 		}
 		//checks for uncompleted order
 		
 		List<Item> inventory = ServiceLocator.getInventoryService().getAvailableInventory();
-		ArrayList<Integer> quantity = new ArrayList<Integer>();
+		ArrayList<String> quantity = new ArrayList<String>();
 		for(int i = 0; i <inventory.size(); i++){
-			quantity.add(0);
+			quantity.add("0");
 		}
 		request.setAttribute("inventory", inventory);
 		request.getSession().setAttribute("inventory", inventory);
@@ -56,38 +57,62 @@ public class Purchase {
 	public String submitItems(@ModelAttribute("quantity") QuantityWrapper quantity, HttpServletRequest request) {
 		Order order = new Order();
 		List<Item> inventory = (List<Item>) request.getSession().getAttribute("inventory");
-		
+		try{
 		for(int i = 0; i < inventory.size(); i++){
-			if(quantity.getQuantity().get(i)>0){
-				order.addItem(inventory.get(i),quantity.getQuantity().get(i));
+			int quant = Integer.parseInt(quantity.getQuantity().get(i));
+			if(quant>0){
+				order.addItem(inventory.get(i),quant);
 			}
 		}
 		
 		request.getSession().setAttribute("order", order);
-		//if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
-		//	
-		//	request.getSession().setAttribute("failed", "false");
-		//	return "redirect:/purchase/paymentEntry";
-		//}
-		//else{
-		//	request.getSession().setAttribute("failed", "true");
-		//	return "redirect:/purchase";
-		//}
-		return "redirect:/purchase/paymentEntry";
+
+		if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
+			
+			request.getSession().setAttribute("failed", "false");
+			return "redirect:/purchase/paymentEntry";
+		}
+		else{
+			request.getSession().setAttribute("failed", "true");
+			return "redirect:/purchase";
+		}
+		}catch(Exception e){
+			request.getSession().setAttribute("failed", "true");
+			return "redirect:/purchase";
+		}
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)
 	public String viewPaymentEntryPage(HttpServletRequest request, HttpServletResponse response) {
-		request.setAttribute("payment", new PaymentInfo());	
+		
+		
+		if(request.getSession().getAttribute("failed")=="true"){
+			request.setAttribute("payment", request.getSession().getAttribute("payment"));	
+			request.setAttribute("failed", "true");
+			request.setAttribute("invalid", request.getSession().getAttribute("invalid"));
+			request.getSession().setAttribute("failed", "false");
+		}else{
+			request.setAttribute("payment", new PaymentInfo());	
+			request.setAttribute("failed", "false");
+		}
 		return "PaymentEntryForm";
 	}
 	
 	@RequestMapping(path = "/submitPayment", method = RequestMethod.POST)
 	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, 
             BindingResult result, HttpServletRequest request, SessionStatus status) {
+		payment.setCustomer_order_id_fk(((Order)request.getSession().getAttribute("order")).getId());
+		String error = payment.getInvalid();
 		request.getSession().setAttribute("payment", payment);
-        
-		return "redirect:shippingEntry";
+
+
+		if(error.equals("")){
+			return "redirect:shippingEntry";
+		}else{
+			request.getSession().setAttribute("failed", true);
+			request.getSession().setAttribute("invalid", error);
+			return "redirect:paymentEntry";
+		}
 	}
 	
 	@RequestMapping(path = "/shippingEntry", method = RequestMethod.GET)
@@ -98,6 +123,7 @@ public class Purchase {
 
 	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
 	public String submitShipping(@ModelAttribute("shipping") ShippingInfo shipping, HttpServletRequest request) {
+		shipping.setCustomer_order_id_fk(((Order)request.getSession().getAttribute("order")).getId());
 		request.getSession().setAttribute("shipping", shipping);
 		return "redirect:viewOrder";
 	}

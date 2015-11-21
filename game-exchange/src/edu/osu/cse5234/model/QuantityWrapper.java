@@ -5,20 +5,20 @@ import java.util.List;
 
 public class QuantityWrapper implements java.io.Serializable {
 		
-		public List<Integer> quantity;
+		public List<String> quantity;
 
 		public QuantityWrapper() {
-			quantity = new ArrayList<Integer>();
+			quantity = new ArrayList<String>();
 
 			
 	    }
 		
 		
-	    public void setQuantity(List<Integer> orderList) {
+	    public void setQuantity(List<String> orderList) {
 	        this.quantity = orderList;
 	    }
 		
-		public List<Integer> getQuantity(){
+		public List<String> getQuantity(){
 			return quantity;
 		}
 		

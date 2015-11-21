@@ -20,8 +20,10 @@ public class ShippingInfo implements java.io.Serializable {
 	private String city;
 	private String state;
 	private int zip;
-	
+	private int customer_order_id_fk;
+	private String invalid;
 	public ShippingInfo(){
+		invalid = "";
 	}
 
 	@Column(name="ID")
@@ -79,14 +81,26 @@ public class ShippingInfo implements java.io.Serializable {
 	}
 	
 	public String getZipString(){
-		String z = "";
-		if(zip!=0){
-			z = ""+zip;
-		}
-		return z;
+		return zip+"";
 	}
 	public void setZipString(String zip){
-		this.zip = Integer.parseInt(zip);
+		try{
+			this.zip = Integer.parseInt(zip);
+		}catch(Exception e){
+			if(invalid.equals("")){
+				invalid = "zip";
+			}else{
+				invalid = invalid +", zip";
+			}
+		}
+	}
+
+	public int getCustomer_order_id_fk() {
+		return customer_order_id_fk;
+	}
+
+	public void setCustomer_order_id_fk(int customer_order_id_fk) {
+		this.customer_order_id_fk = customer_order_id_fk;
 	}
 		
 }
