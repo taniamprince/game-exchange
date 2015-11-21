@@ -50,8 +50,7 @@ public class OrderProcessingServiceBean implements Serializable {
     	if (paymentNumber >= 0) {
     		payment.setConformationNumber(paymentNumber);
     		order.setStatus("Pending");
-    		entityManager.persist(order);
-    		
+    		entityManager.persist(order);    		
     		entityManager.persist(payment);
     		entityManager.persist(shipping);
     		entityManager.flush();
@@ -62,12 +61,13 @@ public class OrderProcessingServiceBean implements Serializable {
     	payment.setCustomer_order_id_fk(order.getId());
     	shipping.setCustomer_order_id_fk(order.getId());
     	entityManager.persist(payment);
+    	entityManager.persist(order);
     	entityManager.flush();
     	return "" + order.getId();
     }
 
     public boolean validateItemAvailability(Order order){	 	
-    	//return ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
+    	// return ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
     	return true;
     }
 }

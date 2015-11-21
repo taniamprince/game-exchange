@@ -88,9 +88,9 @@ public class Purchase {
 		
 		if(request.getSession().getAttribute("failed")=="true"){
 			request.setAttribute("payment", request.getSession().getAttribute("payment"));	
-			request.setAttribute("failed", "true");
+			request.setAttribute("failed", true);
 			request.setAttribute("invalid", request.getSession().getAttribute("invalid"));
-			request.getSession().setAttribute("failed", "false");
+			request.getSession().setAttribute("failed", false);
 		}else{
 			request.setAttribute("payment", new PaymentInfo());	
 			request.setAttribute("failed", "false");
@@ -101,10 +101,8 @@ public class Purchase {
 	@RequestMapping(path = "/submitPayment", method = RequestMethod.POST)
 	public String submitPayment(@ModelAttribute("payment") PaymentInfo payment, 
             BindingResult result, HttpServletRequest request, SessionStatus status) {
-		payment.setCustomer_order_id_fk(((Order)request.getSession().getAttribute("order")).getId());
 		String error = payment.getInvalid();
 		request.getSession().setAttribute("payment", payment);
-
 
 		if(error.equals("")){
 			return "redirect:shippingEntry";
@@ -123,7 +121,6 @@ public class Purchase {
 
 	@RequestMapping(path = "/submitShipping", method = RequestMethod.POST)
 	public String submitShipping(@ModelAttribute("shipping") ShippingInfo shipping, HttpServletRequest request) {
-		shipping.setCustomer_order_id_fk(((Order)request.getSession().getAttribute("order")).getId());
 		request.getSession().setAttribute("shipping", shipping);
 		return "redirect:viewOrder";
 	}

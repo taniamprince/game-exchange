@@ -1,13 +1,10 @@
 package edu.osu.cse5234.model;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -69,9 +66,9 @@ public class PaymentInfo implements java.io.Serializable {
 			cc_num = Integer.parseInt(ccNum);
 		}catch(Exception e){
 			if(invalid.equals("")){
-				invalid = "CC Num";
+				invalid = "Invalid CC number";
 			}else{
-				invalid = invalid +", CC Num";
+				invalid = invalid +", invalid CC number";
 			}
 		}
 	}
@@ -107,9 +104,9 @@ public class PaymentInfo implements java.io.Serializable {
 			this.ccv = Integer.parseInt(ccv);
 		}catch(Exception e){
 			if(invalid.equals("")){
-				invalid = "CCV";
+				invalid = "Invalid CCV";
 			}else{
-				invalid = invalid +", CCV";
+				invalid = invalid +", invalid CCV";
 			}
 		}
 	}

@@ -31,6 +31,8 @@ td { text-align: left; padding: 5px;}
 
 .button{background-color: #b7b7b7; color: #ffffff; font-weight: bold; padding: 8px; border: none; font-size: 15px;}
 
+.error{color: red; padding-bottom: 10px;};
+
 .float-left { float: left; }
 .float-right { float: right; }
 

@@ -18,22 +18,12 @@
 	</c:if>
 		<h2>Payment</h2>
 		<hr>
+		<div class="error">${invalid}</div>
 		<form:form modelAttribute="payment" method="post" action="submitPayment">
-		<table>
-	    	<tr>        	
-	    		<td class="left-col">Name: </td>
-	    		<td><form:input path="" /></td>
-	    	</tr>
-	    	<tr>
-	    		<td>Email: </td>
-	    		<td><form:input path=""/></td>
-	    	</tr>	    	
-	    </table>
 	    <table>
 	    	<tr>        	
 	    		<td class="left-col">Cardholder Name: </td>
 	    		<td><form:input path="cardholder_name" /></td>
-	    		<td><form:errors path="cardholder_name" cssClass="error" /></td>
 	    	</tr>
 	    	<tr>
 	    		<td>CC Number: </td>
