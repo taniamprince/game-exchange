@@ -43,8 +43,6 @@ public class OrderProcessingServiceBean implements Serializable {
 
 	@Resource(lookup="jms/emailQ")
 	private Queue queue;
-	
-	private String customerEmail;
 
 	@PersistenceContext private EntityManager entityManager;
 	
@@ -60,7 +58,7 @@ public class OrderProcessingServiceBean implements Serializable {
     }
      
     private void notifyUser(){
-    	String message = customerEmail + ":" +
+    	String message = 
      	       "Your order was successfully submitted. " + 
      	       "You will hear from us when items are shipped. " + 
      	      	new Date();
