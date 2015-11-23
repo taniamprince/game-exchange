@@ -2,10 +2,17 @@ package edu.osu.cse5234.business;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Iterator;
 
+import javax.annotation.Resource;
 import javax.ejb.LocalBean;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
+import javax.jms.ConnectionFactory;
+import javax.jms.JMSConnectionFactory;
+import javax.jms.JMSContext;
+import javax.jms.Queue;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.xml.ws.WebServiceRef;
@@ -25,7 +32,19 @@ import edu.osu.cse5234.util.ServiceLocator;
  */
 @Stateless
 @LocalBean
+@Resource(name="jms/emailQCF", lookup="jms/emailQCF", type=ConnectionFactory.class) 
 public class OrderProcessingServiceBean implements Serializable {
+	
+	private static final long serialVersionUID = 1L;
+
+	@Inject
+	@JMSConnectionFactory("java:comp/env/jms/emailQCF")
+	private JMSContext jmsContext;
+
+	@Resource(lookup="jms/emailQ")
+	private Queue queue;
+	
+	private String customerEmail;
 
 	@PersistenceContext private EntityManager entityManager;
 	
@@ -38,6 +57,17 @@ public class OrderProcessingServiceBean implements Serializable {
      */
     public OrderProcessingServiceBean() {
         // TODO Auto-generated constructor stub
+    }
+     
+    private void notifyUser(){
+    	String message = customerEmail + ":" +
+     	       "Your order was successfully submitted. " + 
+     	       "You will hear from us when items are shipped. " + 
+     	      	new Date();
+
+     	System.out.println("Sending message: " + message);
+     	jmsContext.createProducer().send(queue, message);
+     	System.out.println("Message Sent!");
     }
     
     public String processOrder(Order order, PaymentInfo payment, ShippingInfo shipping) {
@@ -63,6 +93,7 @@ public class OrderProcessingServiceBean implements Serializable {
     	entityManager.persist(payment);
     	entityManager.persist(order);
     	entityManager.flush();
+    	notifyUser();
     	return "" + order.getId();
     }
 
