@@ -66,8 +66,8 @@ public class OrderProcessingServiceBean implements Serializable {
     	return "" + order.getId();
     }
 
-    public boolean validateItemAvailability(Order order){	 	
-    	// return ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
+    public Boolean validateItemAvailability(Order order){	 	
+    	//return ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
     	return true;
     }
 }
