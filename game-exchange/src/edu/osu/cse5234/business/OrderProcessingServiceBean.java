@@ -20,6 +20,7 @@ import javax.xml.ws.WebServiceRef;
 import com.chase.payment.CreditCardPayment;
 import com.chase.payment.PaymentProcessorService;
 
+import edu.osu.cse5234.business.view.InventoryService;
 import edu.osu.cse5234.business.view.Item;
 import edu.osu.cse5234.business.view.LineItem;
 import edu.osu.cse5234.model.Order;
@@ -96,7 +97,9 @@ public class OrderProcessingServiceBean implements Serializable {
     }
 
     public Boolean validateItemAvailability(Order order){	 	
-    	//return ServiceLocator.getInventoryService().validateQuantity(order.getOrderList());
-    	return true;
+    	InventoryService sl = ServiceLocator.getInventoryService();
+    	sl.validateQuantity(order.getOrderList());
+    			return true;
+    	//return true;
     }
 }

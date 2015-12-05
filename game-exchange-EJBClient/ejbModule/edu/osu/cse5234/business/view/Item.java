@@ -25,7 +25,7 @@ public class Item implements java.io.Serializable {
 	}
 	
 	@Column(name="ID")
-	public int getID(){
+	public int getId(){
 		return id;
 	}
 	

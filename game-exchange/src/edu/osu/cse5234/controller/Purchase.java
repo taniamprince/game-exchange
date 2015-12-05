@@ -57,7 +57,7 @@ public class Purchase {
 	public String submitItems(@ModelAttribute("quantity") QuantityWrapper quantity, HttpServletRequest request) {
 		Order order = new Order();
 		List<Item> inventory = (List<Item>) request.getSession().getAttribute("inventory");
-		try{
+
 		for(int i = 0; i < inventory.size(); i++){
 			int quant = Integer.parseInt(quantity.getQuantity().get(i));
 			if(quant>0){
@@ -67,7 +67,7 @@ public class Purchase {
 		
 		request.getSession().setAttribute("order", order);
 
-		if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
+		/*if(ServiceLocator.getOrderProcessingService().validateItemAvailability(order)){
 			
 			request.getSession().setAttribute("failed", "false");
 			return "redirect:/purchase/paymentEntry";
@@ -79,7 +79,8 @@ public class Purchase {
 		}catch(Exception e){
 			request.getSession().setAttribute("failed", "true");
 			return "redirect:/purchase";
-		}
+		}*/
+		return "redirect:/purchase/paymentEntry";
 	}
 	
 	@RequestMapping(path = "/paymentEntry", method = RequestMethod.GET)

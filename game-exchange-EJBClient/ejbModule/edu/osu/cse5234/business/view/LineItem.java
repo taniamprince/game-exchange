@@ -24,6 +24,7 @@ public class LineItem implements Serializable{
 	private String item_name;
 	private int quantity;
 	private int customer_order_id_fk;
+	private int item_id;
 	
 	public LineItem(){
 		
@@ -31,7 +32,7 @@ public class LineItem implements Serializable{
 	
 	public LineItem(Item item, int cust_id, int quantity){
 		
-		id = item.getID();
+		item_id = item.getId();
 		item_name = item.getName();
 	    this.quantity = quantity;
 	    customer_order_id_fk = cust_id;

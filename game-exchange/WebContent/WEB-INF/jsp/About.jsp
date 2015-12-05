@@ -11,18 +11,20 @@
 <div class="container">
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
+		<h2>About Us</h2>
+		<hr>
 		<div class="col-4">
-		  <h2>Tania Prince</h2>
+		  <h4>Tania Prince</h4>
 		  <h3>CEO</h3>
 		  <p>From Columbus, Ohio. Graduated from The Ohio State University with a degree in computer science and engineering. Founded the company soon after graduation due to her love of video games.</p>
 	    </div>
 		<div class="col-4">
-			<h2>Gregory Rogers</h2>
+			<h4>Gregory Rogers</h4>
 			<h3>Senior Software Engineer</h3>
 			<p>From Columbus, Ohio. Graduated from The Ohio State University with a degree in computer science and engineering.</p>
 		</div>
 		<div class="col-4">
-			<h2>Zachary Weil</h2>
+			<h4>Zachary Weil</h4>
 			<h3>Senior Software Architect</h3>
 			<p>From Redding, California. Graduated from the Ohio State University with a degree in computer science and engineering. </p>
 		</div>

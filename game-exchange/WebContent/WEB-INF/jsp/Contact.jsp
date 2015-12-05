@@ -12,7 +12,25 @@
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
 		<h2>Contact Us</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras eu tortor libero. Sed rutrum mauris quam. Donec rutrum consectetur metus, sed blandit neque aliquam nec.</p>
+		<p>Please fill out the form below and we will get right back to you!<br/><br/></p>
+		<table class="contact">
+			<tr>
+				<td>Name:</td>
+				<td><input type="text"></td>
+			</tr>
+			<tr>
+				<td>Email:</td>
+				<td><input type="text"></td>
+			<tr>
+			<tr>
+				<td valign="top">Message:</td>
+				<td><textarea cols="90" rows="8"></textarea></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input class="button" type="submit" value="Submit"/><br/><br/></td>
+			</tr>
+		</table>
 	</div>
 	<jsp:include page="Footer.jsp"></jsp:include>
 </div>

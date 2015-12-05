@@ -20,7 +20,7 @@
 		<h2>Games</h2>
 		<hr>
 		<form:form modelAttribute="quantity" method="post" action="purchase/submitItems">
-	    <table>
+	    <table class="contact">
 	    	<tr>
 				<th class="left-col">Title</th>
 				<th>Description</th>
@@ -31,7 +31,7 @@
 		  	<tr>      		  		
 		   		<td>${list.name}</td>
 		   		<td>${list.description}</td>
-		   		<td>${list.price}</td>
+		   		<td>$${list.price}</td>
 		   		<td><form:input path="quantity[${pStatus.index}]" /></td>
 		 	</tr>
 			</c:forEach>		
