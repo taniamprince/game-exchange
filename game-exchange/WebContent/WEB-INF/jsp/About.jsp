@@ -11,7 +11,7 @@
 <div class="container">
 	<jsp:include page="Header.jsp"></jsp:include>
 	<div class="row">
-		<h2>About Us</h2>
+		<h2>About Us</h2><br/>
 		<hr>
 		<div class="col-4">
 		  <h4>Tania Prince</h4>
