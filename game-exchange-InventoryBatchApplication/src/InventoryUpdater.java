@@ -24,7 +24,6 @@ public class InventoryUpdater {
 		}
 	}
 
-
 	private static Connection createConnection() throws SQLException, ClassNotFoundException{
 		Class.forName("org.h2.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:h2:C:\\workspace\\data\\game-exchange-db","sa","");
@@ -41,15 +40,32 @@ public class InventoryUpdater {
 		
 	}
 	
+	// This method returns a map of two integers. The first Integer is item ID, and 
+    // the second is cumulative requested quantity across all new orders
 	private static Map<Integer,Integer> getOrderedLineItems(Collection<Integer> newOrderIds, Connection conn) throws SQLException{
 		Map<Integer,Integer> itemQuantity = new HashMap<Integer,Integer>();
 		Iterator<Integer> iter = newOrderIds.iterator();
 		while(iter.hasNext()){
+			// Get order ID
 			Integer orderId = iter.next();
-			ResultSet rset = conn.createStatement().executeQuery("select ID from CUSTOMER_ORDER_LINE_ITEM where CUSTOMER_ORDER_ID_FK = "+orderId);
-			itemQuantity.put(new Integer(rset.getInt("ID")), new Integer(rset.getInt("QUANTITY")));
-		}
-		
+			
+			// Get all line items for that order
+			ResultSet rset = conn.createStatement().executeQuery("select * from CUSTOMER_ORDER_LINE_ITEM where CUSTOMER_ORDER_ID_FK = "+ orderId);
+			
+			while(rset.next()){
+				// Get the item ID
+				int itemID = new Integer(rset.getInt("ITEM_ID"));
+				
+				// If the item ID doesn't exist in the quantity map then add it
+				if (!itemQuantity.containsKey(itemID)){
+					itemQuantity.put(new Integer(itemID), new Integer(rset.getInt("QUANTITY")));
+				}
+				else {
+					// The item ID exists so update the quantity
+					itemQuantity.put(new Integer(itemID), new Integer(itemQuantity.get(itemID) + rset.getInt("QUANTITY")));
+				}
+			}
+		}	
 		return itemQuantity;
 	}
 	
@@ -58,17 +74,20 @@ public class InventoryUpdater {
 		while(iter.hasNext()){
 			int itemId = iter.next();
 			int itemQuantity = orderedItems.get(itemId);
-			ResultSet rset = conn.createStatement().executeQuery("select Quantity from Inventory where ID = "+ itemId);
-			int oldQuantity = rset.getInt("QUANTITY");
-			conn.createStatement().executeQuery("UPDATE INVENTORY SET QUANTITY="+(oldQuantity - itemQuantity)+" WHERE ID="+ itemId);
+			System.out.println("Item quantity: " + itemQuantity);
+			ResultSet rset = conn.createStatement().executeQuery("select * from ITEM where ID = "+ itemId);
+			rset.next();
+			int oldQuantity = (new Integer(rset.getInt("AVAILABLE_QUANTITY")));
+			conn.createStatement().executeUpdate("UPDATE ITEM SET AVAILABLE_QUANTITY="+(oldQuantity - itemQuantity)+" WHERE ID="+ itemId);
 		}
 	}
 	
 	private static void updateOrderStatus(Collection<Integer> newOrderIds, Connection conn) throws SQLException{
 		Iterator<Integer> iter = newOrderIds.iterator();
 		while(iter.hasNext()){
-			conn.createStatement().executeQuery("UPDATE CUSTOMER_ORDER SET STATUS='Processed' WHERE ID="+ iter.next());
+			conn.createStatement().executeUpdate("UPDATE CUSTOMER_ORDER SET STATUS='Processed' WHERE ID="+ iter.next());
 		}
+		System.out.println("Update complete");
 	}
 	
 }
